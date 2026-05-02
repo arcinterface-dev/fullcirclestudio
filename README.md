@@ -2,7 +2,7 @@
 
 > **"No corner cuts."** — A premium, cinematic interior design studio website built with Next.js, Framer Motion, and React Three Fiber.
 
-<img src="public/images/hero/hero.png" alt="FullCircle Studio Hero" width="600">
+<img src="public/images/hero/hero.png" alt="FullCircle Studio Hero" width="600" height="400">
 
 ## 🏛️ Project Overview
 
