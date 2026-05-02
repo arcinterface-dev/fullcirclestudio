@@ -1,0 +1,93 @@
+.section {
+  @apply relative;
+  height: 600vh;
+}
+
+.bgContainer {
+  @apply absolute inset-0 z-0;
+}
+
+.bgImage {
+  @apply absolute inset-0;
+  background-position: left center;
+  background-attachment: fixed;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50%;
+}
+
+.bgOverlay {
+  @apply absolute inset-0 bg-gradient-to-r from-transparent to-white-smoke/20 z-10;
+}
+
+.visualContainer {
+  @apply absolute inset-0 z-[15] pointer-events-none;
+}
+
+.stickyWrapper {
+  @apply sticky top-0 h-screen flex items-center overflow-hidden z-20;
+}
+
+.step {
+  @apply absolute inset-0 flex items-center px-4 md:px-0;
+}
+
+.stepContent {
+  @apply flex flex-col md:flex-row items-center w-full max-w-[1440px] mx-auto;
+}
+
+.spacer {
+  @apply hidden md:block md:w-1/2;
+}
+
+.stepTextWrapper {
+  @apply w-full md:w-1/2 flex flex-col md:flex-row items-center gap-10 md:gap-16;
+}
+
+.stepNumber {
+  @apply text-6xl md:text-8xl font-black text-placebo select-none leading-none tracking-tighter;
+}
+
+.stepText {
+  @apply flex-1 space-y-6 text-center md:text-left;
+}
+
+.stepTitle {
+  @apply text-4xl md:text-6xl font-medium text-jet-black tracking-tight;
+}
+
+.stepAccent {
+  @apply text-accent-red;
+}
+
+.stepDescription {
+  @apply text-granite-gray text-base md:text-xl leading-relaxed max-w-xl mx-auto md:mx-0 font-light;
+}
+
+@media (max-width: 767px) {
+  .section {
+    height: 500vh;
+  }
+
+  .stepContent {
+    @apply gap-4;
+  }
+
+  .stepNumber {
+    @apply text-8xl mb-2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section {
+    height: auto;
+  }
+
+  .stickyWrapper {
+    @apply relative h-auto;
+  }
+
+  .step {
+    @apply relative py-20;
+  }
+}

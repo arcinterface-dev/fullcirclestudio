@@ -1,0 +1,18 @@
+.section {
+  @apply py-24 md:py-32 bg-albescent-white/20;
+}
+.content {
+  @apply text-center max-w-2xl mx-auto space-y-6;
+}
+.title {
+  @apply text-4xl md:text-6xl font-bold text-jet-black leading-tight;
+}
+.accent {
+  @apply text-accent-red;
+}
+.description {
+  @apply text-granite-gray text-lg leading-relaxed;
+}
+.ctaButton {
+  @apply inline-block px-10 py-4 bg-jet-black text-white-smoke text-sm tracking-widest uppercase hover:bg-machine-gun-metal transition-colors duration-300 mt-4;
+}

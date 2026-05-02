@@ -1,0 +1,18 @@
+.container {
+  @apply absolute inset-0 flex flex-col items-center justify-center bg-white-smoke z-50 pointer-events-auto;
+}
+.logoContainer {
+  @apply mb-6;
+}
+.textContainer {
+  @apply font-bold tracking-tight text-3xl md:text-5xl flex items-center overflow-hidden;
+}
+.name {
+  @apply text-light-gray inline-block;
+}
+.suffix {
+  @apply text-jet-black ml-2 inline-block;
+}
+.dot {
+  @apply text-accent-red inline-block origin-bottom;
+}

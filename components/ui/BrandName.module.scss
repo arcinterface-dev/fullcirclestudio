@@ -1,0 +1,12 @@
+.brand {
+  @apply font-bold tracking-tight text-2xl flex items-center;
+}
+.name {
+  @apply text-light-gray;
+}
+.suffix {
+  @apply text-jet-black ml-1;
+}
+.dot {
+  @apply text-accent-red;
+}

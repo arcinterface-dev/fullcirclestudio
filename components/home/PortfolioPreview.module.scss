@@ -1,0 +1,49 @@
+.section {
+  @apply py-20 md:py-32 bg-white-smoke;
+}
+.header {
+  @apply flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4;
+}
+.viewMore {
+  @apply text-sm text-granite-gray hover:text-accent-red transition-colors duration-300 tracking-widest uppercase flex items-center gap-2;
+}
+.projectsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .projectsGrid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .projectsGrid { grid-template-columns: repeat(3, 1fr); }
+}
+.card {
+  @apply overflow-hidden cursor-pointer;
+  
+  &:hover .cardImage {
+    transform: scale(1.05);
+  }
+  &:hover .overlay {
+    background-color: rgba(11, 11, 11, 0.2);
+  }
+}
+.imageWrapper {
+  @apply relative aspect-[4/5] overflow-hidden;
+}
+.cardImage {
+  @apply w-full h-full object-cover transition-transform duration-700;
+}
+.overlay {
+  @apply absolute inset-0 transition-all duration-500;
+  background-color: rgba(11, 11, 11, 0);
+}
+.cardInfo {
+  @apply pt-4 pb-2;
+}
+.category {
+  @apply text-xs tracking-widest uppercase text-granite-gray mb-1;
+}
+.cardTitle {
+  @apply text-lg font-bold text-jet-black;
+}

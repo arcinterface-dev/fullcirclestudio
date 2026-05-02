@@ -1,0 +1,26 @@
+.menuButton {
+  @apply fixed top-6 z-50 w-12 h-12 flex items-center justify-center rounded-full bg-white-smoke shadow-sm border border-placebo cursor-pointer transition-colors hover:bg-albescent-white;
+  right: var(--button-right, 1.5rem);
+  
+  @media (min-width: 768px) {
+    @apply top-10;
+  }
+}
+.dotContainer {
+  @apply relative w-6 h-6 flex items-center justify-center gap-1 transition-transform duration-300;
+  
+  &.open {
+    .dot:nth-child(1) {
+      @apply absolute transform translate-x-0 rotate-45;
+    }
+    .dot:nth-child(2) {
+      @apply opacity-0;
+    }
+    .dot:nth-child(3) {
+      @apply absolute transform translate-x-0 -rotate-45;
+    }
+  }
+}
+.dot {
+  @apply w-1.5 h-1.5 rounded-full bg-jet-black transition-all duration-300;
+}

@@ -1,0 +1,6 @@
+.splashWrapper {
+  @apply fixed inset-0 z-50 pointer-events-none;
+}
+.blocker {
+  @apply fixed inset-0 z-40 bg-white-smoke pointer-events-auto;
+}

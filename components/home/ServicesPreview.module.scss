@@ -1,0 +1,32 @@
+.section {
+  @apply py-20 md:py-32;
+}
+.header {
+  @apply text-center mb-16;
+}
+.servicesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .servicesGrid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .servicesGrid { grid-template-columns: repeat(4, 1fr); }
+}
+.card {
+  @apply p-8 bg-albescent-white/30 border border-placebo rounded-sm hover:bg-albescent-white/60 transition-all duration-300;
+}
+.iconWrapper {
+  @apply w-12 h-12 flex items-center justify-center mb-6;
+}
+.cardTitle {
+  @apply text-xl font-bold text-jet-black mb-3;
+}
+.cardDescription {
+  @apply text-granite-gray text-sm leading-relaxed;
+}
+.arrow {
+  @apply mt-6 text-accent-red;
+}
