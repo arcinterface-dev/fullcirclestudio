@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FullCircle Studio
 
-## Getting Started
+> **"No corner cuts."** — A premium, cinematic interior design studio website built with Next.js, Framer Motion, and React Three Fiber.
 
-First, run the development server:
+![FullCircle Studio Hero](public/images/hero/hero.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🏛️ Project Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+FullCircle Studio is a high-end interior design and architectural visualization platform. This repository contains the complete frontend implementation, featuring bespoke animations, interactive 3D elements, and a minimalist editorial aesthetic that reflects the studio's commitment to precision and luxury.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Key Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Cinematic Shutter Intro**: A custom circular "aperture" shutter animation reveals the site upon entry.
+- **Interactive 3D Hero**: Floating architectural geometries rendered with Three.js (R3F) that react to the brand's minimalist theme.
+- **Split-Screen Storytelling**: An editorial-style process section that pairs high-resolution architectural imagery (pinned on the left) with smooth-scrolling narrative content (on the right).
+- **Fluid Navigation**: A bespoke "Circle Menu" with layout stabilization to prevent scrollbar-induced jitter.
+- **Performance Optimized**: Built with Next.js 14, featuring adaptive DPR for 3D renders and optimized asset loading for a Lighthouse-ready experience.
 
-## Learn More
+## 🛠️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
+- **Animation**: [Framer Motion](https://www.framer.com/motion/)
+- **3D Graphics**: [React Three Fiber](https://r3f.docs.pmnd.rs/) & [Three.js](https://threejs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) & [SCSS Modules](https://sass-lang.com/)
+- **Typeface**: [Outfit](https://fonts.google.com/specimen/Outfit) & [Inter](https://fonts.google.com/specimen/Inter)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦 Getting Started
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Prerequisites
 
-## Deploy on Vercel
+- Node.js 18.0 or later
+- npm / yarn / pnpm
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Installation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/santhanakrishnanstark/fullcirclestudio.git
+   cd fullcirclestudio
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open the site:**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 🎨 Design Philosophy
+
+The site follows a **Neo-Classical Minimalist** aesthetic. We use a curated color palette:
+- `Jet Black`: #1a1a1a
+- `White Smoke`: #f5f5f5
+- `Accent Red`: #d54e5e
+- `Granite Gray`: #6b6762
+
+Every transition and interaction is designed to feel "editorial"—meaning generous whitespace, bold typography, and smooth, high-frame-rate animations.
+
+## 📄 License
+
+This project is proprietary. All design assets and 3D models are owned by FullCircle Studio.
+
+---
+
+Built with ❤️ by Antigravity for santhanakrishnanstark.
