@@ -1,12 +1,12 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import styles from './BrandAnimation.module.scss';
 import { BRAND } from '@/lib/constants';
 
 const AnimatedLogo = () => {
-  const draw = {
+  const draw: Variants = {
     hidden: { pathLength: 0, opacity: 0 },
     visible: (i: number) => {
       const delay = 0.5 + i * 0.3;

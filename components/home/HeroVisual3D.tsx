@@ -4,7 +4,14 @@ import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Float, MeshDistortMaterial, Sphere, PerspectiveCamera, Environment, ContactShadows, AdaptiveDpr, Preload } from '@react-three/drei';
 
-const FloatingShape = ({ position, color, speed, distort }: any) => {
+interface FloatingShapeProps {
+  position: [number, number, number];
+  color: string;
+  speed: number;
+  distort: number;
+}
+
+const FloatingShape = ({ position, color, speed, distort }: FloatingShapeProps) => {
   return (
     <Float speed={speed} rotationIntensity={1.5} floatIntensity={1.5}>
       <Sphere args={[1, 32, 32]} position={position} scale={0.75}>

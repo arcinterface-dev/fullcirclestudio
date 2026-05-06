@@ -5,10 +5,12 @@ import { Canvas } from '@react-three/fiber';
 import { MeshDistortMaterial, PerspectiveCamera, Sphere, AdaptiveDpr, Preload } from '@react-three/drei';
 import styles from './StorytellingSection.module.scss';
 
-const StoryShape = ({ progress, index, color, position }: { progress: any, index: number, color: string, position: [number, number, number] }) => {
-  const stepStart = index / 4;
-  const stepEnd = (index + 1) / 4;
+interface StoryShapeProps {
+  color: string;
+  position: [number, number, number];
+}
 
+const StoryShape = ({ color, position }: StoryShapeProps) => {
   return (
     <Sphere args={[1.5, 32, 32]} position={position}>
       <MeshDistortMaterial
@@ -23,7 +25,7 @@ const StoryShape = ({ progress, index, color, position }: { progress: any, index
   );
 };
 
-const Scene = ({ progress }: { progress: any }) => {
+const Scene = () => {
   const colors = ["#d9d9d9", "#bcbab4", "#454545", "#d54e5e"];
   const positions: [number, number, number][] = [
     [-3, 2, -2],
@@ -38,7 +40,7 @@ const Scene = ({ progress }: { progress: any }) => {
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} intensity={0.5} />
       {colors.map((color, i) => (
-        <StoryShape key={i} index={i} color={color} progress={progress} position={positions[i]} />
+        <StoryShape key={i} color={color} position={positions[i]} />
       ))}
       <AdaptiveDpr pixelated />
       <Preload all />
@@ -46,7 +48,7 @@ const Scene = ({ progress }: { progress: any }) => {
   );
 };
 
-export const StorytellingVisual3D = ({ progress }: { progress: any }) => {
+export const StorytellingVisual3D = () => {
   return (
     <div className={styles.visualContainer}>
       <Canvas 
@@ -54,9 +56,10 @@ export const StorytellingVisual3D = ({ progress }: { progress: any }) => {
         gl={{ alpha: true, antialias: false, powerPreference: 'high-performance' }}
       >
         <Suspense fallback={null}>
-          <Scene progress={progress} />
+          <Scene />
         </Suspense>
       </Canvas>
     </div>
   );
 };
+

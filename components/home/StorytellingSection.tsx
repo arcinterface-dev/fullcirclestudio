@@ -1,11 +1,18 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring, MotionValue } from 'framer-motion';
 import { StorytellingVisual3D } from './StorytellingVisual3D';
 import styles from './StorytellingSection.module.scss';
 
-const steps = [
+interface Step {
+  number: string;
+  title: string;
+  description: string;
+  image: string;
+}
+
+const steps: Step[] = [
   {
     number: '01',
     title: 'Design',
@@ -32,7 +39,7 @@ const steps = [
   },
 ];
 
-const StoryStep = ({ index, scrollYProgress }: { index: number; scrollYProgress: any }) => {
+const StoryStep = ({ index, scrollYProgress }: { index: number; scrollYProgress: MotionValue<number> }) => {
   const stepStart = index / steps.length;
   const stepEnd = (index + 1) / steps.length;
   const isLast = index === steps.length - 1;
@@ -78,35 +85,43 @@ const StoryStep = ({ index, scrollYProgress }: { index: number; scrollYProgress:
   );
 };
 
-const BackgroundImages = ({ progress }: { progress: any }) => {
+const BackgroundImage = ({ index, progress, step }: { index: number; progress: MotionValue<number>; step: Step }) => {
+  const stepStart = index / steps.length;
+  const stepEnd = (index + 1) / steps.length;
+
+  const opacity = useTransform(
+    progress,
+    [stepStart - 0.1, stepStart, stepEnd, stepEnd + 0.1],
+    [0, 1, 1, 0]
+  );
+
+  return (
+    <motion.div
+      className={styles.bgImage}
+      style={{
+        backgroundImage: `url(${step.image})`,
+        opacity
+      }}
+    />
+  );
+};
+
+const BackgroundImages = ({ progress }: { progress: MotionValue<number> }) => {
   return (
     <div className={styles.bgContainer}>
-      {steps.map((step, index) => {
-        const stepStart = index / steps.length;
-        const stepEnd = (index + 1) / steps.length;
-        const isLast = index === steps.length - 1;
-
-        const opacity = useTransform(
-          progress,
-          [stepStart - 0.1, stepStart, stepEnd, stepEnd + 0.1],
-          [0, 1, 1, 0]
-        );
-
-        return (
-          <motion.div
-            key={index}
-            className={styles.bgImage}
-            style={{
-              backgroundImage: `url(${step.image})`,
-              opacity
-            }}
-          />
-        );
-      })}
+      {steps.map((step, index) => (
+        <BackgroundImage 
+          key={index} 
+          index={index} 
+          progress={progress} 
+          step={step} 
+        />
+      ))}
       <div className={styles.bgOverlay} />
     </div>
   );
 };
+
 
 export const StorytellingSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -124,7 +139,7 @@ export const StorytellingSection = () => {
   return (
     <section className={styles.section} ref={containerRef} id="process">
       <BackgroundImages progress={smoothProgress} />
-      <StorytellingVisual3D progress={smoothProgress} />
+      <StorytellingVisual3D />
       <div className={styles.stickyWrapper}>
         {steps.map((_, index) => (
           <StoryStep key={index} index={index} scrollYProgress={smoothProgress} />
@@ -133,3 +148,4 @@ export const StorytellingSection = () => {
     </section>
   );
 };
+

@@ -53,7 +53,7 @@ export const CircleMenu = () => {
               '--button-right': isOpen 
                 ? `calc(${isDesktop ? '2.5rem' : '1.5rem'} + ${sbWidth}px)` 
                 : (isDesktop ? '2.5rem' : '1.5rem')
-            } as any}
+            } as React.CSSProperties}
             exit={{ opacity: 0 }}
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
