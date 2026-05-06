@@ -5,10 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "opennextjs-cloudflare build --dangerouslyUseUnsupportedNextVersion",
+    "deploy": "opennextjs-cloudflare deploy",
     "buildlocal": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "opennextjs-cloudflare build --dangerouslyUseUnsupportedNextVersion && opennextjs-cloudflare deploy",
     "preview": "opennextjs-cloudflare build --dangerouslyUseUnsupportedNextVersion && opennextjs-cloudflare preview"
   },
   "dependencies": {

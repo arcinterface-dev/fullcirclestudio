@@ -1,9 +1,6 @@
-import type { OpenNextConfig } from "@opennextjs/cloudflare";
+import { defineCloudflareConfig } from "@opennextjs/cloudflare";
 
-const config: OpenNextConfig = {
-    default: {
-        runtime: "edge",
-    },
-};
-
-export default config;
+export default defineCloudflareConfig({
+    // This helper sets up the "wrapper" and "converter" for you 
+    // so you don't have to write that long object manually.
+});
