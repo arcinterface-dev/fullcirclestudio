@@ -18,6 +18,10 @@ const config: Config = {
         'placebo': '#e6e6e6',
         'accent-red': '#d54e5e',
       },
+      fontFamily: {
+        sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui'],
+        display: ['var(--font-outfit)', 'var(--font-inter)', 'ui-sans-serif'],
+      },
     },
   },
   plugins: [],

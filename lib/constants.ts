@@ -1,6 +1,6 @@
 export const BRAND = {
-  name: "FullCircle",
-  suffix: "Studio",
+  name: "fullcircle",
+  suffix: "studio",
   tagline: "No corner cuts",
   whatsappNumber: "911234567890", // Placeholder
   socials: {

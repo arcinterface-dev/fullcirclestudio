@@ -76,6 +76,17 @@
   .stepNumber {
     @apply text-8xl mb-2;
   }
+
+  .bgContainer .bgImage {
+    width: 100%;
+    filter: brightness(0.3);
+    background-size: cover;
+  }
+
+  .stepTitle,
+  .stepDescription {
+    color: var(--color-white-smoke);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

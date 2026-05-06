@@ -34,9 +34,9 @@ export const Footer = () => {
       <Container className={styles.content}>
         <div>
           <BrandName />
-          <p className="mt-2 text-granite-gray text-sm">{BRAND.tagline}</p>
+          <p className="text-granite-gray text-sm lowercase">{BRAND.tagline}</p>
         </div>
-        
+
         <div className={styles.socials}>
           <a href={BRAND.socials.instagram} target="_blank" rel="noreferrer" className={styles.link} aria-label="Instagram">
             <InstagramIcon />
@@ -49,7 +49,7 @@ export const Footer = () => {
           </a>
         </div>
       </Container>
-      
+
       <Container>
         <p className={`${styles.copy} mt-12 text-center`}>
           © {new Date().getFullYear()} {BRAND.name}{BRAND.suffix}. All rights reserved.

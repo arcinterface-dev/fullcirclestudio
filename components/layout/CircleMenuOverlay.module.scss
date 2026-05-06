@@ -1,20 +1,23 @@
 .overlay {
   @apply fixed inset-0 z-40 bg-white-smoke flex flex-col;
 }
+
 .brandWrapper {
   @apply absolute top-6 left-6 md:top-10 md:left-10 z-50;
 }
+
 .nav {
   @apply flex flex-col items-center justify-center flex-grow space-y-6 md:space-y-8;
 }
+
 .link {
-  @apply text-4xl md:text-6xl font-bold text-jet-black hover:text-accent-red transition-colors duration-300 relative inline-block;
-  
+  @apply font-display text-4xl md:text-5xl font-bold text-jet-black hover:text-accent-red transition-colors duration-300 relative inline-block;
+
   &::after {
     content: '';
     @apply absolute -bottom-2 left-0 w-0 h-1 bg-accent-red transition-all duration-300;
   }
-  
+
   &:hover::after {
     @apply w-full;
   }

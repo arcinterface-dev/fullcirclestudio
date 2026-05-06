@@ -1,5 +1,5 @@
 .heading {
-  @apply text-3xl md:text-5xl font-bold text-jet-black mb-8 relative inline-block;
+  @apply font-display text-3xl md:text-5xl font-bold text-jet-black mb-8 relative inline-block;
 }
 .underline {
   @apply absolute -bottom-2 left-0 w-12 h-1 bg-accent-red;

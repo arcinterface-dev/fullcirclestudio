@@ -22,14 +22,34 @@ export const HeroSection = () => {
             <div className={styles.brandContainer}>
               <BrandName />
             </div>
-            <motion.p
+            <motion.div
               className={styles.heroTagline}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    delayChildren: 1.2,
+                    staggerChildren: 0.04,
+                  },
+                },
+              }}
+              initial="hidden"
+              animate="visible"
             >
-              {BRAND.tagline}
-            </motion.p>
+              {BRAND.tagline.split("").map((char, index) => (
+                <motion.span
+                  key={index}
+                  variants={{
+                    hidden: { opacity: 0, y: 5 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  className="inline-block"
+                >
+                  {char === " " ? "\u00A0" : char}
+                </motion.span>
+              ))}
+            </motion.div>
           </div>
 
           <h1 className={styles.mainTitle}>
