@@ -87,7 +87,7 @@ export const HeroSection = () => {
       >
         <Image
           src="/images/hero/hero-sofa.png"
-          alt="Designer sofa by FullCircle Studio"
+          alt="Designer sofa by fullcircle studio"
           width={400}
           height={300}
           className={styles.heroSofa}

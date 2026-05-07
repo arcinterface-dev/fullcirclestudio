@@ -6,14 +6,14 @@ const SITE_URL = 'https://fullcirclestudio.com'; // Replace with production URL 
 export const baseMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    template: `%s | FullCircle Studio`,
-    default: `FullCircle Studio - ${BRAND.tagline}`,
+    template: `%s | fullcircle studio`,
+    default: `fullcircle studio - ${BRAND.tagline}`,
   },
   description: "Premium interior design firm specializing in cinematic architectural storytelling and meticulous craftsmanship. We believe in luxury, precision, and spaces that tell a story.",
-  keywords: ["Interior Design", "Architectural Visualization", "Luxury Design", "Cinematic Storytelling", "FullCircle Studio", "Home Transformation"],
-  authors: [{ name: "FullCircle Studio" }],
-  creator: "FullCircle Studio",
-  publisher: "FullCircle Studio",
+  keywords: ["Interior Design", "Architectural Visualization", "Luxury Design", "Cinematic Storytelling", "fullcircle studio", "Home Transformation"],
+  authors: [{ name: "fullcircle studio" }],
+  creator: "fullcircle studio",
+  publisher: "fullcircle studio",
   formatDetection: {
     email: false,
     address: false,
@@ -23,16 +23,16 @@ export const baseMetadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: `FullCircle Studio | ${BRAND.tagline}`,
+    title: `fullcircle studio | ${BRAND.tagline}`,
     description: "Premium interior design firm specializing in cinematic architectural storytelling and meticulous craftsmanship.",
     url: SITE_URL,
-    siteName: 'FullCircle Studio',
+    siteName: 'fullcircle studio',
     images: [
       {
         url: '/images/hero/hero.png',
         width: 1200,
         height: 630,
-        alt: 'FullCircle Studio Interior Design',
+        alt: 'fullcircle studio Interior Design',
       },
     ],
     locale: 'en_US',
@@ -40,7 +40,7 @@ export const baseMetadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: `FullCircle Studio | ${BRAND.tagline}`,
+    title: `fullcircle studio | ${BRAND.tagline}`,
     description: "Premium interior design firm specializing in cinematic architectural storytelling.",
     images: ['/images/hero/hero.png'],
     creator: '@fullcirclestudio',
