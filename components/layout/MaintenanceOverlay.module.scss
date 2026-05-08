@@ -1,0 +1,23 @@
+.overlay {
+  @apply fixed inset-0 flex flex-col items-center justify-center p-6 sm:p-12 z-[9999] bg-white-smoke pointer-events-auto;
+}
+
+.content {
+  @apply max-w-2xl text-center flex flex-col items-center;
+}
+
+.title {
+  @apply text-4xl sm:text-5xl md:text-6xl font-light mb-6 tracking-tight text-jet-black;
+}
+
+.description {
+  @apply text-lg sm:text-xl font-light leading-relaxed mb-10 max-w-xl text-granite-gray;
+}
+
+.button {
+  @apply relative inline-flex items-center justify-center px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium transition-colors duration-300 overflow-hidden text-white-smoke bg-jet-black;
+}
+
+.button:hover {
+  @apply bg-machine-gun-metal;
+}
