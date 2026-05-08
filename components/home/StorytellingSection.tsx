@@ -109,15 +109,17 @@ const BackgroundImage = ({ index, progress, step }: { index: number; progress: M
 const BackgroundImages = ({ progress }: { progress: MotionValue<number> }) => {
   return (
     <div className={styles.bgContainer}>
-      {steps.map((step, index) => (
-        <BackgroundImage 
-          key={index} 
-          index={index} 
-          progress={progress} 
-          step={step} 
-        />
-      ))}
-      <div className={styles.bgOverlay} />
+      <div className={styles.bgStickyWrapper}>
+        {steps.map((step, index) => (
+          <BackgroundImage 
+            key={index} 
+            index={index} 
+            progress={progress} 
+            step={step} 
+          />
+        ))}
+        <div className={styles.bgOverlay} />
+      </div>
     </div>
   );
 };
