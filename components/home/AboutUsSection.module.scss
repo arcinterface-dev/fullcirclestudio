@@ -1,0 +1,42 @@
+.section {
+  @apply py-20 md:py-32 bg-white-smoke overflow-hidden;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.textContent {
+  @apply flex flex-col items-start;
+}
+.description {
+  @apply text-granite-gray text-base md:text-lg leading-relaxed mb-6;
+}
+.stats {
+  @apply flex flex-wrap gap-8 mt-8 pt-8 border-t border-placebo w-full;
+}
+.statItem {
+  @apply flex flex-col;
+}
+.statNumber {
+  @apply text-4xl font-display font-light text-jet-black mb-1;
+}
+.statLabel {
+  @apply text-sm text-granite-gray uppercase tracking-widest font-semibold;
+}
+.imageContent {
+  @apply w-full h-full;
+}
+.imageWrapper {
+  @apply relative aspect-[4/5] md:aspect-square w-full overflow-hidden bg-placebo;
+}
+.image {
+  @apply object-cover w-full h-full;
+}
+.imageOverlay {
+  @apply absolute inset-0 border border-white/50 m-6 pointer-events-none z-10;
+}
