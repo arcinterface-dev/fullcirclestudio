@@ -12,6 +12,7 @@ export const CircleMenu = () => {
   const { splashPhase, splashDismissed } = useSplash();
   const [mounted, setMounted] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -19,15 +20,26 @@ export const CircleMenu = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', checkMobile);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', checkMobile);
+    };
   }, []);
 
   const isHomePage = pathname === '/';
   const isHeaderVisible = isHomePage && !isScrolled;
 
-  // Only show menu button if splash is done/dismissed AND we aren't showing the main header
-  const showMenu = mounted && (splashDismissed || splashPhase === 'done') && !isHeaderVisible;
+  // Only show menu button if splash is done/dismissed 
+  // On Mobile: Always show. On Desktop: Only show if header is hidden.
+  const showMenu = mounted && (splashDismissed || splashPhase === 'done') && (isMobile || !isHeaderVisible);
 
   const [sbWidth, setSbWidth] = useState(0);
 

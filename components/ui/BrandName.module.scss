@@ -1,6 +1,11 @@
 .brand {
   @apply font-display font-bold tracking-tight text-2xl flex items-center;
   
+  @media (max-width: 767px) {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+  
   &.hasShadow {
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     
