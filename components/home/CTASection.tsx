@@ -23,7 +23,9 @@ export const CTASection = () => {
             Let&apos;s create something extraordinary together. Reach out to discuss your next project
             and see how we can transform your space.
           </p>
-          <a href="/contact" className={styles.ctaButton}>Book Now</a>
+          <div className={styles.ctaGroup}>
+            <a href="/contact" className={styles.ctaButton}>Book Now</a>
+          </div>
         </motion.div>
       </Container>
     </section>

@@ -23,9 +23,9 @@ Building a cinematic, storytelling brand website for **Full Circle System**, an 
 
 # SECTION 3: BRAND IDENTITY
 
-- **Brand name:** FullCircleStudio.
-  - "FullCircle" → light gray `#d9d9d9`
-  - "Studio" → jet black `#0b0b0b`
+- **Brand name:** fullcircle studio.
+  - "fullcircle" → light gray `#d9d9d9`
+  - "studio" → jet black `#0b0b0b`
   - Dot (.) → accent red `#d54e5e`
 - **Tagline:** "No corner cuts"
 - **Theme:** Modern minimalism + Neo-classical
@@ -55,7 +55,8 @@ Building a cinematic, storytelling brand website for **Full Circle System**, an 
 
 | Layer       | Technology                    |
 |-------------|-------------------------------|
-| Framework   | Next.js 14+ (App Router)      |
+| Framework   | Next.js 14.2.35 (App Router)  |
+| Core React  | React 18.3.1                  |
 | Export      | Static (`output: 'export'`)   |
 | Styling     | TailwindCSS + SCSS Modules    |
 | Animations  | Framer Motion                 |
@@ -261,11 +262,11 @@ Mobile users are the PRIMARY audience — never compromise mobile quality.
 
 # SECTION 10: SEO REQUIREMENTS
 
-- Every page: unique `title`, `description`, `openGraph` metadata
+- Every page: unique `title`, `description`, `openGraph`, and `twitter` metadata
 - Semantic HTML: `<main>`, `<section>`, `<article>`, `<nav>`, `<header>`, `<footer>`
 - Single `<h1>` per page, proper heading hierarchy
 - Schema.org `LocalBusiness` JSON-LD in root layout
-- `robots.txt` + `sitemap.xml` via next-sitemap
+- Dynamic `sitemap.ts` and `robots.ts` configured natively via Next.js App Router
 - Canonical URLs on every page
 - Alt text on ALL images
 - **CRITICAL: Splash screen is a visual overlay — all content is in the DOM for crawlers. Never gate content behind animations.**
@@ -401,18 +402,18 @@ Using `output: 'export'` in `next.config.ts`:
 
 # SECTION 14: BUILD ORDER (Implementation Sequence)
 
-| Phase | Tasks |
-|---|---|
-| 1. Project Setup | Init Next.js 14+, TypeScript, Tailwind, SCSS. Configure next.config with static export. Set up Tailwind theme with color tokens. Create globals.scss with CSS custom properties. |
-| 2. Data Layer | Create constants.ts, portfolio-data.ts, services-data.ts, faq-data.ts. Define TypeScript types. |
-| 3. Layout Shell | Root layout with fonts, metadata, SplashProvider. Footer, Container, SectionHeading, BrandName components. |
-| 4. Splash Screen | SplashProvider + useSplashSession hook. BrandAnimation (Framer Motion). CircleRevealCanvas (Three.js shader). Wire 3-phase flow. Test dev toggle. |
-| 5. Circle Menu | CircleMenu + CircleMenuOverlay. Navigation links. Open/close animations. |
-| 6. Homepage | HeroSection, StorytellingSection + StoryStep (scroll hijack), ServicesPreview, PortfolioPreview, CTASection. |
-| 7. Inner Pages | About, Services, Portfolio (listing + detail), Contact, FAQ. |
-| 8. FABs | WhatsAppFAB and FAQFAB. Position and z-index. |
-| 9. Polish | Page transitions, micro-interactions, responsive testing, prefers-reduced-motion fallbacks, image optimization, Lighthouse audit. |
-| 10. Deploy | Push to GitHub, connect Vercel, configure domain DNS. |
+| Status | Phase | Tasks |
+|---|---|---|
+| ✅ | 1. Project Setup | Init Next.js 14.2+, React 18.3, TypeScript, Tailwind, SCSS. Configure next.config with static export. Set up Tailwind theme with color tokens. Create globals.scss with CSS custom properties. |
+| ✅ | 2. Data Layer | Create constants.ts, portfolio-data.ts, services-data.ts, faq-data.ts. Define TypeScript types. |
+| ✅ | 3. Layout Shell | Root layout with fonts (Outfit/Inter), metadata, SplashProvider. Footer, Container, SectionHeading, BrandName components. |
+| ✅ | 4. Splash Screen | SplashProvider + useSplashSession hook. BrandAnimation (Framer Motion). CircleRevealCanvas (Three.js shader). Wire 3-phase flow. |
+| ✅ | 5. Navigation | CircleMenu + CircleMenuOverlay. Navigation links. Open/close animations. |
+| ✅ | 6. Homepage | HeroSection, StorytellingSection + StoryStep (scroll hijack), ServicesPreview, PortfolioPreview, CTASection. |
+| ✅ | 7. Inner Pages | About, Services, Portfolio (listing + detail), Contact, FAQ. |
+| ✅ | 8. FABs | WhatsAppFAB and FAQFAB. Position and z-index. |
+| 🚧 | 9. Polish | Page transitions, micro-interactions, responsive testing, image optimization, SEO (Sitemap/OG tags implemented), Lighthouse audit. |
+| 🚧 | 10. Deploy | GitHub pushed. Vercel deployment and domain DNS pending. |
 
 ---
 

@@ -1,0 +1,24 @@
+.header {
+  @apply pt-40 pb-20 md:pt-48 md:pb-28 relative overflow-hidden;
+  
+  // Subtle background gradient for depth
+  background: linear-gradient(to bottom, var(--white-smoke), rgba(245, 245, 245, 0.5));
+}
+
+.title {
+  @apply text-5xl md:text-7xl font-light text-jet-black tracking-tight leading-tight;
+  font-family: var(--font-outfit);
+}
+
+.accent {
+  @apply text-accent-red;
+}
+
+.description {
+  @apply mt-6 text-lg md:text-xl text-granite-gray max-w-2xl font-light leading-relaxed;
+}
+
+// Decorative subtle line
+.line {
+  @apply absolute bottom-0 left-0 w-full h-[1px] bg-light-gray opacity-50;
+}

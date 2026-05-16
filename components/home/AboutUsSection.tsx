@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import React from 'react';
@@ -8,7 +9,7 @@ import styles from './AboutUsSection.module.scss';
 
 export const AboutUsSection = () => {
   return (
-    <section className={styles.section} id="about-us">
+    <section className={styles.section} id="philosophy">
       <Container>
         <div className={styles.grid}>
           <motion.div 
@@ -18,27 +19,18 @@ export const AboutUsSection = () => {
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6 }}
           >
-            <SectionHeading>About Us</SectionHeading>
+            <SectionHeading>Our Vision</SectionHeading>
             <p className={styles.description}>
-              At FullCircle Studio, we believe that the spaces we inhabit shape the lives we lead. Founded on the principles of neo-classical elegance and modern minimalism, our studio transcends traditional interior design. We curate experiences, blending timeless aesthetics with uncompromising functionality.
+              Our journey began with a vision to bridge creativity and execution under one circle—where ideas, detailing, project management, and craftsmanship work together seamlessly. From concept to completion, we focus on delivering environments that are refined, functional, and emotionally engaging.
             </p>
             <p className={styles.description}>
-              Our multi-disciplinary team of architects, designers, and artisans work collaboratively to transform visions into tangible realities. From the initial conceptual sketches to the final curated object placement, we obsess over every detail to ensure the final result is nothing short of perfection.
+              We are building more than interiors. We are creating a platform where design professionals, skilled vendors, and clients come together to shape meaningful spaces without compromises. <br /><br />
+              <strong>NO CORNERS CUT.</strong>
             </p>
-            <div className={styles.stats}>
-              <div className={styles.statItem}>
-                <span className={styles.statNumber}>12+</span>
-                <span className={styles.statLabel}>Years Experience</span>
-              </div>
-              <div className={styles.statItem}>
-                <span className={styles.statNumber}>85</span>
-                <span className={styles.statLabel}>Projects Completed</span>
-              </div>
-              <div className={styles.statItem}>
-                <span className={styles.statNumber}>14</span>
-                <span className={styles.statLabel}>Design Awards</span>
-              </div>
-            </div>
+            
+            <a href="/about" className={styles.redirectButton}>
+              Learn More About Us
+            </a>
           </motion.div>
           
           <motion.div 

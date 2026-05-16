@@ -29,7 +29,7 @@ export const baseMetadata: Metadata = {
     siteName: 'fullcircle studio',
     images: [
       {
-        url: '/images/hero/hero.png',
+        url: '/images/hero/hero.webp',
         width: 1200,
         height: 630,
         alt: 'fullcircle studio Interior Design',
@@ -42,7 +42,7 @@ export const baseMetadata: Metadata = {
     card: 'summary_large_image',
     title: `fullcircle studio | ${BRAND.tagline}`,
     description: "Premium interior design firm specializing in cinematic architectural storytelling.",
-    images: ['/images/hero/hero.png'],
+    images: ['/images/hero/hero.webp'],
     creator: '@fullcirclestudio',
   },
   robots: {

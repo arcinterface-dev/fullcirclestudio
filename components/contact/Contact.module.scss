@@ -1,0 +1,59 @@
+.section {
+  @apply py-20 bg-white-smoke;
+}
+
+.gridContainer {
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mt-12;
+}
+
+// Contact Info Styles
+.infoContainer {
+  @apply space-y-12;
+}
+
+.infoBlock {
+  @apply space-y-4;
+}
+
+.infoLabel {
+  @apply text-sm uppercase tracking-widest text-accent-red font-medium;
+}
+
+.infoText {
+  @apply text-xl md:text-2xl font-light text-jet-black;
+  font-family: var(--font-outfit);
+}
+
+.infoLink {
+  @apply hover:text-accent-red transition-colors duration-300;
+  display: block;
+}
+
+// Contact Form Styles
+.formContainer {
+  @apply bg-white p-8 md:p-12 rounded-xl border border-placebo shadow-sm;
+}
+
+.form {
+  @apply space-y-8;
+}
+
+.inputGroup {
+  @apply flex flex-col space-y-2;
+}
+
+.label {
+  @apply text-sm text-granite-gray uppercase tracking-wider;
+}
+
+.input, .textarea {
+  @apply w-full bg-transparent border-b border-light-gray py-3 text-jet-black font-light text-lg focus:outline-none focus:border-accent-red transition-colors duration-300;
+}
+
+.textarea {
+  @apply resize-none min-h-[120px];
+}
+
+.submitButton {
+  @apply w-full bg-jet-black text-white-smoke py-4 px-8 text-sm uppercase tracking-widest hover:bg-accent-red transition-colors duration-300;
+}

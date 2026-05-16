@@ -1,0 +1,55 @@
+.header {
+  @apply absolute top-0 left-0 w-full z-40 transition-all duration-500 py-6 md:py-10;
+  background: transparent !important;
+  pointer-events: none;
+
+  .navLink {
+    @apply text-[10px] tracking-[0.2em] text-white-smoke hover:text-white-smoke transition-colors uppercase font-medium;
+  }
+
+  .actionButton {
+    @apply text-[10px] tracking-[0.2em] text-white-smoke border-b border-white-smoke/30 pb-1 hover:border-white-smoke transition-all uppercase font-medium flex items-center gap-2;
+  }
+
+  .brand {
+    @apply pointer-events-auto;
+  }
+}
+
+.fluidHeader {
+  @apply flex items-center justify-between w-full mx-auto px-8 md:px-16 lg:px-24;
+  max-width: 1600px;
+}
+
+.nav {
+  @apply hidden md:flex items-center gap-8 transition-all duration-500 pointer-events-auto;
+  &.isHidden {
+    @apply opacity-0 pointer-events-none -translate-y-10;
+  }
+}
+
+.actions {
+  @apply hidden md:block transition-all duration-500 pointer-events-auto;
+  &.isHidden {
+    @apply opacity-0 pointer-events-none -translate-y-10;
+  }
+}
+
+.arrow {
+  @apply text-[8px] opacity-60;
+}
+
+@media (max-width: 767px) {
+  .header {
+    @apply py-6;
+    background: linear-gradient(
+      to bottom,
+      rgba(188, 186, 180, 0.4) 0%,
+      transparent 100%
+    );
+    &.isScrolled {
+      @apply py-4;
+      background-image: none;
+    }
+  }
+}

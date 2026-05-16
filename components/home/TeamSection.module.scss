@@ -1,58 +1,47 @@
 .section {
-  @apply py-20 md:py-32 bg-albescent-white/20;
+  @apply py-12 md:py-20 bg-albescent-white/20;
 }
 .header {
-  @apply text-center mb-16;
+  @apply text-center mb-8;
 }
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
+.profileLayout {
+  @apply flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-20 lg:gap-24;
 }
-.card {
-  @apply flex flex-col cursor-pointer;
+.imageCol {
+  @apply w-full md:w-[35%] lg:w-[30%] max-w-[380px];
+}
+.detailsCol {
+  @apply w-full md:w-[65%] lg:w-[70%] flex flex-col text-left;
 }
 .imageContainer {
-  @apply relative mb-6 w-full;
+  @apply relative w-full;
 }
 .borderOffset {
-  @apply absolute inset-0 border border-accent-red opacity-0 transition-all duration-500 ease-out pointer-events-none z-0;
-}
-.imageWrapper {
-  @apply aspect-[3/4] w-full overflow-hidden bg-placebo relative z-10 transition-transform duration-500 ease-out;
-}
-.card:hover .borderOffset {
-  @apply opacity-100;
+  @apply absolute inset-0 border border-accent-red transition-all duration-500 ease-out pointer-events-none z-0;
   transform: translate(12px, 12px);
 }
-.card:hover .imageWrapper {
-  transform: translate(-4px, -4px);
+.imageWrapper {
+  @apply aspect-square w-full overflow-hidden bg-placebo relative z-10;
 }
 .image {
-  @apply object-cover w-full h-full transition-transform duration-700 grayscale;
-}
-.card:hover .image {
-  @apply scale-105 grayscale-0;
+  @apply object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-700;
 }
 .nameWrapper {
-  @apply relative self-start mb-1;
+  @apply relative self-start mb-2;
 }
 .name {
-  @apply text-xl font-bold text-jet-black font-display relative z-10;
+  @apply text-3xl md:text-4xl lg:text-5xl font-bold text-jet-black font-display relative z-10;
 }
 .nameAccent {
-  @apply absolute -bottom-1 left-0 h-[2px] bg-accent-red transition-all duration-500 ease-out;
-  width: 0;
-}
-.card:hover .nameAccent {
-  width: 100%;
+  @apply absolute -bottom-2 left-0 h-[3px] bg-accent-red;
+  width: 60px;
 }
 .role {
-  @apply text-sm text-granite-gray uppercase tracking-widest;
+  @apply text-base md:text-lg text-granite-gray uppercase tracking-widest mt-2 font-medium;
+}
+.bio {
+  @apply mt-10 text-granite-gray text-lg md:text-xl leading-relaxed font-light;
+  p {
+    @apply mb-4;
+  }
 }

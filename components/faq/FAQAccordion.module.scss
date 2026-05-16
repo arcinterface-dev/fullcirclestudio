@@ -1,0 +1,61 @@
+.section {
+  @apply py-20 bg-white-smoke;
+}
+
+.accordionContainer {
+  @apply max-w-3xl mx-auto mt-12;
+}
+
+.item {
+  @apply border-b border-placebo overflow-hidden;
+}
+
+.questionButton {
+  @apply w-full flex items-center justify-between py-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-red;
+}
+
+.question {
+  @apply text-xl md:text-2xl font-light text-jet-black transition-colors duration-300;
+  font-family: var(--font-outfit);
+}
+
+.activeQuestion {
+  @apply text-accent-red;
+}
+
+.icon {
+  @apply text-granite-gray transition-transform duration-300;
+}
+
+.activeIcon {
+  @apply rotate-45 text-accent-red;
+}
+
+.answer {
+  @apply text-lg text-granite-gray font-light leading-relaxed pb-6;
+}
+
+.searchContainer {
+  @apply max-w-3xl mx-auto mb-12 relative;
+}
+
+.searchInputWrapper {
+  @apply relative flex items-center;
+}
+
+.searchIcon {
+  @apply absolute left-4 text-granite-gray;
+}
+
+.searchInput {
+  @apply w-full py-4 pl-12 pr-12 bg-white border border-placebo rounded-none text-jet-black placeholder:text-ash-gray focus:outline-none focus:border-accent-red transition-colors duration-300;
+  font-family: var(--font-inter);
+}
+
+.clearButton {
+  @apply absolute right-4 text-ash-gray hover:text-accent-red transition-colors duration-300;
+}
+
+.noResults {
+  @apply text-center py-10 text-granite-gray font-light;
+}

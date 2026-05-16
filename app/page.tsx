@@ -12,9 +12,9 @@ export default function Home() {
     <>
       <HeroSection />
       <StorytellingSection />
-      <TeamSection />
-      <PortfolioPreview />
       <AboutUsSection />
+      <PortfolioPreview />
+      <TeamSection />
       <ServicesPreview />
       <CTASection />
     </>

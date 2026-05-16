@@ -2,7 +2,7 @@ export const BRAND = {
   name: "fullcircle",
   suffix: "studio",
   tagline: "No corner cuts",
-  whatsappNumber: "911234567890", // Placeholder
+  whatsappNumber: "7200948055", // Placeholder
   socials: {
     instagram: "https://instagram.com/placeholder",
     facebook: "https://facebook.com/placeholder",

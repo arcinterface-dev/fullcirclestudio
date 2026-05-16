@@ -13,6 +13,14 @@
 .description {
   @apply text-granite-gray text-lg leading-relaxed;
 }
+.ctaGroup {
+  @apply flex flex-wrap justify-center gap-4 mt-8;
+}
+
 .ctaButton {
-  @apply inline-block px-10 py-4 bg-jet-black text-white-smoke text-sm tracking-widest uppercase hover:bg-machine-gun-metal transition-colors duration-300 mt-4;
+  @apply inline-block px-10 py-4 bg-jet-black text-white-smoke text-sm tracking-widest uppercase hover:bg-machine-gun-metal transition-all duration-300;
+}
+
+.secondaryButton {
+  @apply inline-block px-10 py-4 border border-jet-black text-jet-black text-sm tracking-widest uppercase hover:bg-jet-black hover:text-white-smoke transition-all duration-300;
 }

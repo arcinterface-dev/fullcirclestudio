@@ -1,0 +1,25 @@
+.section {
+  @apply py-20 md:py-32 bg-jet-black text-white-smoke;
+}
+
+.gridContainer {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 mt-16;
+}
+
+.valueCard {
+  @apply space-y-4 border-t border-machine-gun-metal pt-8;
+}
+
+.valueNumber {
+  @apply text-accent-red font-light text-xl;
+  font-family: var(--font-outfit);
+}
+
+.valueTitle {
+  @apply text-2xl font-light text-white-smoke tracking-wide;
+  font-family: var(--font-outfit);
+}
+
+.valueDesc {
+  @apply text-ash-gray font-light leading-relaxed;
+}

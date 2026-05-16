@@ -1,0 +1,34 @@
+.section {
+  @apply py-20 bg-white-smoke;
+}
+
+.gridContainer {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12;
+}
+
+.card {
+  @apply relative overflow-hidden rounded-lg aspect-[4/5] bg-light-gray cursor-pointer;
+  display: block;
+}
+
+.image {
+  @apply object-cover transition-transform duration-700 ease-in-out group-hover:scale-105;
+}
+
+.overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-jet-black/80 via-jet-black/20 to-transparent opacity-80 transition-opacity duration-500;
+}
+
+.content {
+  @apply absolute bottom-0 left-0 p-8 w-full translate-y-4 transition-transform duration-500 ease-out group-hover:translate-y-0;
+}
+
+.category {
+  @apply text-accent-red text-sm tracking-widest uppercase mb-2 font-medium;
+  display: block;
+}
+
+.title {
+  @apply text-3xl font-light text-white-smoke;
+  font-family: var(--font-outfit);
+}

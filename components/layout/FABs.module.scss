@@ -1,0 +1,24 @@
+.container {
+  @apply fixed bottom-6 right-6 z-30 flex flex-col items-center gap-4;
+}
+
+.whatsappFab {
+  @apply w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300;
+  animation: pulse 2.5s infinite;
+}
+
+.faqFab {
+  @apply w-12 h-12 bg-jet-black text-white-smoke rounded-full flex items-center justify-center shadow-md hover:bg-accent-red hover:shadow-lg hover:scale-110 transition-all duration-300;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}

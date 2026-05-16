@@ -16,26 +16,26 @@ const steps: Step[] = [
   {
     number: '01',
     title: 'Design',
-    description: 'We begin by understanding your vision, lifestyle, and space. Our designers create mood boards and conceptual layouts tailored to your aesthetic.',
-    image: '/images/process/design.jpg'
+    description: 'We begin with deep empathy—listening beyond the brief to understand people, purpose, timeline, and budget as one complete picture, translating it into clear, intentional design grounded in what is realistically achievable.',
+    image: '/images/process/design.webp'
   },
   {
     number: '02',
     title: 'Detail',
-    description: 'Every element is meticulously planned — from material palettes and furniture selections to lighting schemes and spatial flow.',
-    image: '/images/process/detail.jpg'
+    description: 'We move into detailed documentation that works like a construction guide. Every dimension, material, and installation method is precisely defined so that the site team can build without confusion.',
+    image: '/images/process/detail.webp'
   },
   {
     number: '03',
     title: 'Execute',
-    description: 'Our skilled craftsmen and trusted partners bring the design to life with precision, quality, and attention to every detail.',
-    image: '/images/process/execute.jpg'
+    description: 'We execute through our in-house factory, where trained craftsmen work with GFC drawings to ensure high-quality output. We track every stage with clear documentation for full transparency and control.',
+    image: '/images/process/execute.webp'
   },
   {
     number: '04',
     title: 'Delivery',
-    description: 'We reveal your transformed space, styled and ready to live in. The full circle is complete — a space that feels truly yours.',
-    image: '/images/process/delivery.jpg'
+    description: 'No blind promises—every schedule is built on actual scope and pace. We ensure smooth delivery with continuous tracking and a final handover support system, including aftercare guidance and product tips.',
+    image: '/images/process/delivery.webp'
   },
 ];
 
