@@ -74,8 +74,12 @@
 }
 
 @media (max-width: 767px) {
+  .refinedLayout {
+    @apply justify-start pt-[24vh];
+  }
+
   .leftContent {
-    @apply mt-[-45vh];
+    @apply mt-0;
   }
 
   .line1 {
@@ -95,7 +99,8 @@
   }
 
   .bottomContent {
-    @apply right-8 text-left bottom-20;
+    @apply relative mt-12 right-auto left-0;
+    bottom: auto;
     align-items: flex-start;
   }
 
