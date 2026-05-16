@@ -1,10 +1,11 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
+import Image from 'next/image';
 import styles from './HeroSection.module.scss';
 
 export const HeroSection = () => {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -15,7 +16,7 @@ export const HeroSection = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: "110%", opacity: 0 },
     visible: { 
       y: 0, 
@@ -31,9 +32,11 @@ export const HeroSection = () => {
     <section className={styles.hero} id="hero">
       <div className={styles.bgWrapper}>
         <div className={styles.bgOverlay} />
-        <img 
+        <Image 
           src="/images/hero/hero-banner.webp" 
           alt="FullCircle Studio Hero Banner" 
+          fill
+          priority
           className={styles.bgImage}
         />
       </div>
