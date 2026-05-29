@@ -17,9 +17,15 @@ module.exports = {
         'placebo': '#e6e6e6',
         'accent-red': '#d54e5e',
       },
+      backgroundColor: {
+        'white-smoke': '#eeece8',
+      },
+      gradientColorStops: {
+        'white-smoke': '#eeece8',
+      },
       fontFamily: {
         sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui'],
-        display: ['var(--font-outfit)', 'var(--font-inter)', 'ui-sans-serif'],
+        display: ['var(--font-display)', 'var(--font-inter)', 'ui-sans-serif'],
       },
     },
   },

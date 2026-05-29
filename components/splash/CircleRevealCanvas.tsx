@@ -9,7 +9,7 @@ const RevealShaderMaterial = {
     uTime: { value: 0 },
     uProgress: { value: 0 },
     uResolution: { value: new THREE.Vector2() },
-    uColor: { value: new THREE.Color('#f5f5f5') }
+    uColor: { value: new THREE.Color('#eeece8') }
   },
   vertexShader: `
     varying vec2 vUv;
@@ -65,7 +65,7 @@ const RevealPlane = ({ onComplete }: { onComplete: () => void }) => {
       uTime: { value: 0 },
       uProgress: { value: 0 },
       uResolution: { value: new THREE.Vector2(size.width, size.height) },
-      uColor: { value: new THREE.Color('#f5f5f5') } // matches white-smoke
+      uColor: { value: new THREE.Color('#eeece8') } // matches white-smoke
     };
   }, [size]);
   

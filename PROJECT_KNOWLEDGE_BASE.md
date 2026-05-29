@@ -37,7 +37,7 @@ Building a cinematic, storytelling brand website for **Full Circle System**, an 
 
 | Token              | Hex       | Usage                                      |
 |--------------------|-----------|---------------------------------------------|
-| white-smoke        | `#f5f5f5` | Page backgrounds, splash background         |
+| white-smoke        | `#eeece8` | Page backgrounds, splash background         |
 | light-gray         | `#d9d9d9` | "FullCircle" text, subtle borders           |
 | jet-black          | `#0b0b0b` | "Studio" text, headings, body text          |
 | granite-gray       | `#6b6762` | Secondary text, captions                    |
@@ -121,7 +121,7 @@ The splash is a cinematic intro that plays once per browser session.
 ### 3-Phase Flow:
 
 **Phase 1 — Brand Animation (~2.5s, Framer Motion)**
-1. Screen starts solid white-smoke (`#f5f5f5`)
+1. Screen starts solid white-smoke (`#eeece8`)
 2. "FullCircle" fades/slides in from left in light gray (`#d9d9d9`), 0ms-800ms
 3. "Studio" fades/slides in from right in jet black (`#0b0b0b`), 400ms-1200ms
 4. Red dot (`.`) scales up with bounce easing, 1000ms-1400ms
@@ -406,7 +406,7 @@ Using `output: 'export'` in `next.config.ts`:
 |---|---|---|
 | ✅ | 1. Project Setup | Init Next.js 14.2+, React 18.3, TypeScript, Tailwind, SCSS. Configure next.config with static export. Set up Tailwind theme with color tokens. Create globals.scss with CSS custom properties. |
 | ✅ | 2. Data Layer | Create constants.ts, portfolio-data.ts, services-data.ts, faq-data.ts. Define TypeScript types. |
-| ✅ | 3. Layout Shell | Root layout with fonts (Outfit/Inter), metadata, SplashProvider. Footer, Container, SectionHeading, BrandName components. |
+| ✅ | 3. Layout Shell | Root layout with fonts (Plus Jakarta Sans/Inter), metadata, SplashProvider. Footer, Container, SectionHeading, BrandName components. |
 | ✅ | 4. Splash Screen | SplashProvider + useSplashSession hook. BrandAnimation (Framer Motion). CircleRevealCanvas (Three.js shader). Wire 3-phase flow. |
 | ✅ | 5. Navigation | CircleMenu + CircleMenuOverlay. Navigation links. Open/close animations. |
 | ✅ | 6. Homepage | HeroSection, StorytellingSection + StoryStep (scroll hijack), ServicesPreview, PortfolioPreview, CTASection. |

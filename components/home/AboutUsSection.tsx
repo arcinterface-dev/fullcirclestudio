@@ -21,11 +21,13 @@ export const AboutUsSection = () => {
           >
             <SectionHeading>Our Vision</SectionHeading>
             <p className={styles.description}>
-              Our journey began with a vision to bridge creativity and execution under one circle—where ideas, detailing, project management, and craftsmanship work together seamlessly. From concept to completion, we focus on delivering environments that are refined, functional, and emotionally engaging.
+              Our journey began with a vision to bridge creativity and execution under one circle — where ideas, detailing, project management, and craftsmanship work together seamlessly. From concept to completion, we focus on delivering environments that are refined, functional, and emotionally engaging.
             </p>
             <p className={styles.description}>
-              We are building more than interiors. We are creating a platform where design professionals, skilled vendors, and clients come together to shape meaningful spaces without compromises. <br /><br />
-              <strong>NO CORNERS CUT.</strong>
+              Whether it is a home, workspace, hospitality project, or bespoke interior, our approach combines strong design thinking with practical execution to ensure every project is handled with clarity, precision, and care.
+            </p>
+            <p className={styles.description}>
+              We are building more than interiors. We are creating a platform where design professionals, skilled vendors, and clients come together to shape meaningful spaces without compromises or corner cuts.
             </p>
             
             <a href="/about" className={styles.redirectButton}>

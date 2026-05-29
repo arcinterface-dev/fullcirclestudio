@@ -61,7 +61,7 @@ const AnimatedLogo = () => {
         cy="68"
         r="4"
         fill="currentColor"
-        stroke="#f5f5f5"
+        stroke="#eeece8"
         strokeWidth="1"
         variants={draw}
         custom={2}

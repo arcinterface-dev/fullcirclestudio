@@ -22,7 +22,8 @@
   @apply w-12 h-12 flex items-center justify-center mb-6;
 }
 .cardTitle {
-  @apply text-xl font-bold text-jet-black mb-3;
+  @apply text-xl font-medium text-jet-black mb-3;
+  font-family: var(--font-display);
 }
 .cardDescription {
   @apply text-granite-gray text-sm leading-relaxed;

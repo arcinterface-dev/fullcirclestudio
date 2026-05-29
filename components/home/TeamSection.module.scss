@@ -30,7 +30,7 @@
   @apply relative self-start mb-2;
 }
 .name {
-  @apply text-3xl md:text-4xl lg:text-5xl font-bold text-jet-black font-display relative z-10;
+  @apply text-3xl md:text-4xl lg:text-5xl font-light text-jet-black font-display relative z-10;
 }
 .nameAccent {
   @apply absolute -bottom-2 left-0 h-[3px] bg-accent-red;

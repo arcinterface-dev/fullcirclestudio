@@ -71,7 +71,7 @@ export const CircleRevealCSS = ({ onComplete }: { onComplete: () => void }) => {
           boxShadow: `
             0 0 20px 4px rgba(11, 11, 11, 0.12),
             0 0 60px 10px rgba(11, 11, 11, 0.06),
-            0 0 0 100vmax #f5f5f5,
+            0 0 0 100vmax #eeece8,
             inset 0 0 60px 20px rgba(11, 11, 11, 0.03)
           `,
           willChange: 'width, height',

@@ -2,12 +2,12 @@
   @apply pt-40 pb-20 md:pt-48 md:pb-28 relative overflow-hidden;
   
   // Subtle background gradient for depth
-  background: linear-gradient(to bottom, var(--white-smoke), rgba(245, 245, 245, 0.5));
+  background: linear-gradient(to bottom, #eeece8, rgba(238, 236, 232, 0.5));
 }
 
 .title {
   @apply text-5xl md:text-7xl font-light text-jet-black tracking-tight leading-tight;
-  font-family: var(--font-outfit);
+  font-family: var(--font-display);
 }
 
 .accent {

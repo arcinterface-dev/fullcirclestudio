@@ -8,10 +8,15 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import styles from './TeamSection.module.scss';
 
 const member = {
-  name: 'Elena Rostova',
-  role: 'Principal Architect & Founder',
-  bio: 'With over 15 years of experience in high-end residential and commercial architecture, Elena leads FullCircle Studio with a vision for sustainable, emotionally resonant design. Her approach combines technical precision with a deep understanding of how spaces influence human behavior.',
-  image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=800',
+  name: 'Rafic',
+  role: 'Founder & Principal Designer',
+  bio: [
+    "After working across early-stage startups, growing businesses, and corporate environments for years, I began to understand how strong systems and clear communication can completely change the outcome of a project. At the same time, I also saw where the design and construction sector often falls short — gaps in coordination, unclear documentation, uncontrolled spending, compromised quality, and timelines that drift without transparency.",
+    "My approach is centered around creating spaces through a process that is organized, practical, and client-focused. I believe good design is not just about aesthetics, but about making the right decisions at the right stage — through proper planning, technical clarity, material understanding, and streamlined execution.",
+    "I strongly value empathy in the design process. Every client has different priorities, budgets, and lifestyles, and the process should adapt accordingly. The goal is to help clients spend wisely while creating spaces that feel intentional, functional, and long-lasting.",
+    "Through Full Circle Studio, I aim to build a more transparent and reliable design experience where quality, timelines, communication, and execution are given equal importance."
+  ],
+  image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800',
 };
 
 export const TeamSection = () => {
@@ -55,10 +60,11 @@ export const TeamSection = () => {
             </div>
             <p className={styles.role}>{member.role}</p>
             <div className={styles.bio}>
-              <p>{member.bio}</p>
-              <p className="mt-4">
-                Elena believes that great design is not just about aesthetics, but about creating environments that empower and inspire the people who inhabit them.
-              </p>
+              {member.bio.map((paragraph, index) => (
+                <p key={index} className={index > 0 ? "mt-4" : ""}>
+                  {paragraph}
+                </p>
+              ))}
             </div>
           </motion.div>
         </div>

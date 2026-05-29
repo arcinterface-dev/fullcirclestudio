@@ -16,7 +16,7 @@
 
 .question {
   @apply text-xl md:text-2xl font-light text-jet-black transition-colors duration-300;
-  font-family: var(--font-outfit);
+  font-family: var(--font-display);
 }
 
 .activeQuestion {

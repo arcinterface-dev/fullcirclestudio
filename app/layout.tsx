@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Outfit, Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.scss";
 import { baseMetadata } from "@/lib/metadata";
 import { ClientLayout } from "@/components/layout/ClientLayout";
 
-const outfit = Outfit({
+const displayFont = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-display",
+  weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -27,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${outfit.variable} ${inter.variable} antialiased min-h-screen flex flex-col`}
+        className={`${displayFont.variable} ${inter.variable} antialiased min-h-screen flex flex-col`}
       >
         <ClientLayout>
           {children}

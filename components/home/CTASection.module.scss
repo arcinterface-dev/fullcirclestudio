@@ -5,7 +5,8 @@
   @apply text-center max-w-2xl mx-auto space-y-6;
 }
 .title {
-  @apply text-4xl md:text-6xl font-bold text-jet-black leading-tight;
+  @apply text-4xl md:text-6xl font-light text-jet-black leading-tight;
+  font-family: var(--font-display);
 }
 .accent {
   @apply text-accent-red;

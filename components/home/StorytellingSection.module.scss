@@ -48,7 +48,7 @@
 }
 
 .stepNumber {
-  @apply text-6xl md:text-8xl font-black text-placebo select-none leading-none tracking-tighter;
+  @apply text-6xl md:text-8xl font-black text-ash-gray select-none leading-none tracking-tighter;
 }
 
 .stepText {
@@ -56,7 +56,8 @@
 }
 
 .stepTitle {
-  @apply text-4xl md:text-6xl font-medium text-jet-black tracking-tight;
+  @apply text-4xl md:text-6xl font-light text-jet-black tracking-tight;
+  font-family: var(--font-display);
 }
 
 .stepAccent {
@@ -84,6 +85,10 @@
     width: 100%;
     filter: brightness(0.3);
     background-size: cover;
+  }
+
+  .stepNumber {
+    @apply text-placebo;
   }
 
   .stepTitle,

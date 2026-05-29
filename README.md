@@ -22,7 +22,7 @@ FullCircle Studio is a high-end interior design and architectural visualization 
 - **Animation**: [Framer Motion](https://www.framer.com/motion/)
 - **3D Graphics**: [React Three Fiber](https://r3f.docs.pmnd.rs/) & [Three.js](https://threejs.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) & [SCSS Modules](https://sass-lang.com/)
-- **Typeface**: [Outfit](https://fonts.google.com/specimen/Outfit) & [Inter](https://fonts.google.com/specimen/Inter)
+- **Typeface**: [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans) & [Inter](https://fonts.google.com/specimen/Inter)
 
 ## 📦 Getting Started
 
