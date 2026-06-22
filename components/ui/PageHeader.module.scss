@@ -1,12 +1,12 @@
 .header {
-  @apply pt-40 pb-20 md:pt-48 md:pb-28 relative overflow-hidden;
+  @apply pt-40 pb-12 md:pt-48 md:pb-16 relative overflow-hidden;
   
   // Subtle background gradient for depth
   background: linear-gradient(to bottom, #eeece8, rgba(238, 236, 232, 0.5));
 }
 
 .title {
-  @apply text-5xl md:text-7xl font-light text-jet-black tracking-tight leading-tight;
+  @apply text-4xl md:text-5xl lg:text-6xl font-light text-jet-black tracking-tight leading-tight;
   font-family: var(--font-display);
 }
 
@@ -15,7 +15,39 @@
 }
 
 .description {
-  @apply mt-6 text-lg md:text-xl text-granite-gray max-w-2xl font-light leading-relaxed;
+  @apply mt-6 text-base md:text-lg text-granite-gray max-w-2xl font-light leading-relaxed;
+  white-space: pre-line;
+}
+
+/* Optional Split Grid Styles */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.textContent {
+  @apply flex flex-col justify-center;
+}
+
+.imageCol {
+  @apply flex justify-center w-full mt-6 lg:mt-0;
+}
+
+.imageWrapper {
+  @apply relative w-full aspect-[4/3] lg:aspect-square rounded-lg overflow-hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(225, 216, 203, 0.3);
+}
+
+.image {
+  @apply object-cover transition-transform duration-700 hover:scale-105;
 }
 
 // Decorative subtle line

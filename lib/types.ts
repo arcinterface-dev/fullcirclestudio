@@ -7,6 +7,7 @@ export interface PortfolioProject {
   client?: string;
   year?: string;
   details?: string[];
+  pdfUrl?: string;
 }
 
 export interface Service {

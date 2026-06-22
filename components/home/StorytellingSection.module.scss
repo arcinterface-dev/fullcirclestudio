@@ -1,62 +1,138 @@
+/* ── Section: tall for scroll tracking ───────────────────────────── */
 .section {
   @apply relative;
-  height: 600vh;
+  height: 500vh;
+  background-color: var(--color-white-smoke);
 }
 
-.bgContainer {
-  @apply absolute inset-0 z-0;
-}
-
-.bgStickyWrapper {
+.stickyWrapper {
   @apply sticky top-0 h-screen w-full overflow-hidden;
+}
+
+/* ── Background images ──────────────────────────────────────────── */
+.bgContainer {
+  @apply absolute inset-0 z-0 w-full;
+  -webkit-mask-image:
+    linear-gradient(to right, black calc(65vw - 500px), transparent calc(65vw - 500px)),
+    radial-gradient(circle at calc(65vw - 500px) 50%, black 440px, transparent 441px);
+  mask-image:
+    linear-gradient(to right, black calc(65vw - 500px), transparent calc(65vw - 500px)),
+    radial-gradient(circle at calc(65vw - 500px) 50%, black 440px, transparent 441px);
 }
 
 .bgImage {
   @apply absolute inset-y-0 left-0;
-  background-position: center;
+  width: calc(65vw - 60px);
+  background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 50%;
 }
 
 .bgOverlay {
-  @apply absolute inset-0 bg-gradient-to-r from-transparent to-white-smoke/40 z-10;
+  @apply absolute inset-0 z-10;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
-.visualContainer {
-  @apply absolute inset-0 z-[15] pointer-events-none;
+/* ── Arc viewport ───────────────────────────────────────────────── */
+.arcViewport {
+  @apply absolute inset-0 z-20;
 }
 
-.stickyWrapper {
-  @apply sticky top-0 h-screen flex items-center overflow-hidden z-20;
+/* Anchor point = circle center, placed at left-center of viewport */
+.arcPositioner {
+  position: absolute;
+  top: 50%;
+  left: calc(65vw - 500px);
 }
 
-.step {
-  @apply absolute inset-0 flex items-center px-4 md:px-0;
+/* The rotating wheel — circle + step nodes live here */
+.arcWheel {
+  width: 1000px;
+  /* 2 × RADIUS */
+  height: 1000px;
+  position: absolute;
+  top: -500px;
+  /* offset to center on arcPositioner */
+  left: -500px;
+  transform-origin: center center;
 }
 
-.stepContent {
-  @apply flex flex-col md:flex-row items-center w-full max-w-[1440px] mx-auto;
+.arcSvg {
+  @apply absolute inset-0;
+  color: var(--color-light-gray);
+  opacity: 0.35;
 }
 
-.spacer {
-  @apply hidden md:block md:w-1/2;
+/* ── Step node ──────────────────────────────────────────────────── */
+.stepNode {
+  @apply absolute;
+  will-change: transform, opacity;
 }
 
-.stepTextWrapper {
-  @apply w-full md:w-1/2 flex flex-col md:flex-row items-center gap-10 md:gap-16 md:pl-12 lg:pl-20;
+.dotContainer {
+  @apply absolute flex items-center justify-center shrink-0;
+  width: 80px;
+  height: 80px;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
 }
 
-.stepNumber {
-  @apply text-6xl md:text-8xl font-black text-ash-gray select-none leading-none tracking-tighter;
+.stepDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-jet-black);
+  will-change: transform, opacity;
 }
 
-.stepText {
-  @apply flex-1 space-y-6 text-center md:text-left;
+.textBlockWrapper {
+  @apply absolute;
+  top: 0;
+  left: 60px;
+  /* Base offset on desktop */
+  transform: translateY(-50%);
+
+  @media (max-width: 1440px) {
+    left: 56px;
+  }
+
+  @media (max-width: 1280px) {
+    left: 48px;
+  }
+
+  @media (max-width: 1024px) {
+    left: 40px;
+  }
+}
+
+.stepTextBlock {
+  @apply relative;
+  width: 440px;
+  transform-origin: left center;
+
+  @media (max-width: 1440px) {
+    width: 360px;
+  }
+
+  @media (max-width: 1280px) {
+    width: 300px;
+  }
+
+  @media (max-width: 1024px) {
+    width: 250px;
+  }
+}
+
+.partLabel {
+  @apply text-base font-medium tracking-[0.15em] uppercase block;
+  color: var(--color-granite-gray);
+  margin-bottom: 8px;
 }
 
 .stepTitle {
-  @apply text-4xl md:text-6xl font-light text-jet-black tracking-tight;
+  @apply text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight;
+  color: var(--color-jet-black);
   font-family: var(--font-display);
 }
 
@@ -65,38 +141,105 @@
 }
 
 .stepDescription {
-  @apply text-granite-gray text-base md:text-xl leading-relaxed max-w-xl mx-auto md:mx-0 font-light;
+  @apply text-base md:text-lg leading-relaxed font-light;
+  color: var(--color-granite-gray);
+  margin-top: 12px;
+  max-width: 100%;
 }
 
+/* ── Decorative dot (opposite side of arc) ──────────────────────── */
+.decorativeDot {
+  @apply absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-granite-gray);
+  transform: translate(-50%, -50%);
+  opacity: 0.4;
+}
+
+
+/* ── Mobile ─────────────────────────────────────────────────────── */
 @media (max-width: 767px) {
   .section {
-    height: 500vh;
+    height: 400vh;
   }
 
-  .stepContent {
-    @apply gap-4;
+  .bgContainer {
+    -webkit-mask-image: none;
+    mask-image: none;
   }
 
-  .stepNumber {
-    @apply text-8xl mb-2;
-  }
-
-  .bgContainer .bgImage {
+  .bgImage {
     width: 100%;
     filter: brightness(0.3);
-    background-size: cover;
   }
 
-  .stepNumber {
-    @apply text-placebo;
+  .bgOverlay {
+    @apply bg-gradient-to-b from-transparent to-black/20;
+    background-color: transparent;
   }
 
-  .stepTitle,
-  .stepDescription {
+  .arcPositioner {
+    left: -50%;
+  }
+
+  .arcWheel {
+    /* Use CSS individual `scale` property so it doesn't conflict
+       with Framer Motion's `rotate` set via the style prop */
+    scale: 0.55;
+  }
+
+  .stepNode {
+    /* Counteract the 0.55 scale on mobile? Wait, the scale is on arcWheel. */
+  }
+
+  .dotContainer {
+    width: 60px;
+    height: 60px;
+  }
+
+  .textBlockWrapper {
+    left: 70px;
+    /* 30px radius + 40px gap */
+  }
+
+  .stepTextBlock {
+    width: 480px;
+  }
+
+  .stepDot {
+    width: 24px;
+    height: 24px;
+    background: var(--color-white-smoke);
+  }
+
+  .partLabel {
+    color: var(--color-ash-gray);
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+
+  .stepTitle {
     color: var(--color-white-smoke);
+    font-size: 56px;
+    line-height: 1.1;
+  }
+
+  .stepDescription {
+    color: var(--color-ash-gray);
+    font-size: 28px;
+    line-height: 1.5;
+    max-width: 550px;
+    margin-top: 16px;
+  }
+
+  .decorativeDot {
+    background: var(--color-ash-gray);
   }
 }
 
+/* ── Reduced motion ─────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .section {
     height: auto;
@@ -106,7 +249,27 @@
     @apply relative h-auto;
   }
 
-  .step {
-    @apply relative py-20;
+  .arcViewport {
+    @apply relative;
+    height: auto;
+  }
+
+  .arcPositioner {
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+
+  .arcWheel {
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+
+  .stepNode {
+    @apply relative;
+    transform: none !important;
+    opacity: 1 !important;
+    @apply py-8;
   }
 }

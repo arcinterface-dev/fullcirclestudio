@@ -63,8 +63,8 @@ export const faqData: FAQ[] = [
   },
   {
     id: "no-corners-cut",
-    question: "What does “No Corners Cut” mean at Full Circle?",
-    answer: "\"No Corners Cut\" is our core philosophy. It represents an uncompromising commitment to quality, transparency, and accountability—ensuring no shortcuts in workmanship, material integrity, or project communication."
+    question: "What does “No Corner Cuts” mean at Full Circle?",
+    answer: "\"No Corner Cuts\" is our core philosophy. It represents an uncompromising commitment to quality, transparency, and accountability—ensuring no shortcuts in workmanship, material integrity, or project communication."
   },
   {
     id: "transparency",

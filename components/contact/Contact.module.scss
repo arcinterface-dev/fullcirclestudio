@@ -12,15 +12,15 @@
 }
 
 .infoBlock {
-  @apply space-y-4;
+  @apply space-y-3;
 }
 
 .infoLabel {
-  @apply text-sm uppercase tracking-widest text-accent-red font-medium;
+  @apply text-xs uppercase tracking-widest text-accent-red font-medium;
 }
 
 .infoText {
-  @apply text-xl md:text-2xl font-light text-jet-black;
+  @apply text-base md:text-lg font-light text-jet-black;
   font-family: var(--font-display);
 }
 
@@ -35,7 +35,7 @@
 }
 
 .form {
-  @apply space-y-8;
+  @apply space-y-6;
 }
 
 .inputGroup {
@@ -43,11 +43,11 @@
 }
 
 .label {
-  @apply text-sm text-granite-gray uppercase tracking-wider;
+  @apply text-xs text-granite-gray uppercase tracking-wider;
 }
 
 .input, .textarea {
-  @apply w-full bg-transparent border-b border-light-gray py-3 text-jet-black font-light text-lg focus:outline-none focus:border-accent-red transition-colors duration-300;
+  @apply w-full bg-transparent border-b border-light-gray py-2.5 text-jet-black font-light text-sm md:text-[15px] focus:outline-none focus:border-accent-red transition-colors duration-300;
 }
 
 .textarea {
@@ -55,5 +55,56 @@
 }
 
 .submitButton {
-  @apply w-full bg-jet-black text-white-smoke py-4 px-8 text-sm uppercase tracking-widest hover:bg-accent-red transition-colors duration-300;
+  @apply w-full bg-jet-black text-white-smoke py-3.5 px-8 text-xs uppercase tracking-widest hover:bg-accent-red transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+// Wizard Progress Styles
+.progressContainer {
+  @apply mb-8;
+}
+
+.progressHeader {
+  @apply flex justify-between items-end mb-2;
+}
+
+.progressText {
+  @apply text-xs font-medium text-jet-black tracking-wider uppercase;
+}
+
+.progressStepName {
+  @apply text-xs text-granite-gray font-light;
+}
+
+.progressBar {
+  @apply w-full h-1 bg-placebo rounded-full overflow-hidden;
+}
+
+.progressFill {
+  @apply h-full bg-accent-red transition-all duration-500 ease-out;
+}
+
+// Interactive Pills
+.pillGroupLabel {
+  @apply text-xs text-granite-gray uppercase tracking-wider mb-3 block;
+}
+
+.pillGroup {
+  @apply flex flex-wrap gap-2 md:gap-3;
+}
+
+.pill {
+  @apply px-4 py-2 text-sm border border-placebo rounded-full text-granite-gray cursor-pointer transition-all duration-300 hover:border-accent-red hover:text-accent-red select-none bg-white;
+}
+
+.pillActive {
+  @apply bg-accent-red border-accent-red text-white-smoke shadow-md hover:text-white-smoke;
+}
+
+// Navigation Buttons
+.navButtons {
+  @apply flex items-center justify-between gap-4 mt-8;
+}
+
+.secondaryButton {
+  @apply py-3.5 px-6 text-xs uppercase tracking-widest text-jet-black border border-light-gray hover:border-jet-black transition-colors duration-300;
 }

@@ -2,6 +2,7 @@
 
 import { motion, Variants } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './HeroSection.module.scss';
 
 export const HeroSection = () => {
@@ -17,9 +18,9 @@ export const HeroSection = () => {
   };
 
   const itemVariants: Variants = {
-    hidden: { y: "110%", opacity: 0 },
-    visible: { 
-      y: 0, 
+    hidden: { y: "140%", opacity: 0 },
+    visible: {
+      y: 0,
       opacity: 1,
       transition: {
         duration: 1.4,
@@ -32,9 +33,9 @@ export const HeroSection = () => {
     <section className={styles.hero} id="hero">
       <div className={styles.bgWrapper}>
         <div className={styles.bgOverlay} />
-        <Image 
-          src="/images/hero/hero-banner.webp" 
-          alt="FullCircle Studio Hero Banner" 
+        <Image
+          src="/images/hero/hero-banner-warm.webp"
+          alt="FullCircle Studio Hero Banner"
           fill
           priority
           className={styles.bgImage}
@@ -46,32 +47,44 @@ export const HeroSection = () => {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
+            className={styles.titleContainer}
           >
-            <span className="block overflow-hidden pb-1">
-              <motion.span variants={itemVariants} className={styles.line1}>We believe design</motion.span>
+            {/* Line 1 */}
+            <span className={styles.lineWrapper}>
+              <motion.span variants={itemVariants} className={styles.line1}>
+                We believe design
+              </motion.span>
             </span>
-            <span className="block overflow-hidden pb-1">
-              <motion.span variants={itemVariants} className={styles.line2}>is not about spending more.</motion.span>
+
+            {/* Line 2 */}
+            <span className={styles.lineWrapper}>
+              <motion.span variants={itemVariants} className={styles.line2}>
+                <span className={styles.accentUnderline}>is not about</span> spending more.
+              </motion.span>
             </span>
-            <span className="block overflow-hidden pb-1">
-              <motion.span variants={itemVariants} className={styles.line3}>It is about <span className={styles.spendingRight}>spending right.</span></motion.span>
+
+            {/* Line 3 */}
+            <span className={styles.lineWrapper}>
+              <motion.span variants={itemVariants} className={styles.line3}>
+                <span className={styles.line3Prefix}>It&apos;s about</span>
+                <span className={styles.line3Suffix}>spending right.</span>
+              </motion.span>
             </span>
           </motion.h1>
         </div>
-        
-        <motion.div 
+
+        <motion.div
           className={styles.bottomContent}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 1.8, ease: "easeOut" }}
         >
           <p className={styles.infoText}>
-            Designing with responsibility.<br/>
-            Executing with a vision.
+            Let&apos;s discover <br /> your perfect space
           </p>
-          <a href="/contact?feeling=true" className={styles.feelingButton}>
+          <Link href="/contact?feeling=true" className={styles.feelingButton}>
             GET MY FEELING
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

@@ -1,0 +1,27 @@
+.section {
+  @apply py-20 md:py-32 bg-white-smoke;
+}
+
+.widgetContainer {
+  @apply mt-12 w-full min-h-[300px] relative;
+  
+  // Clean transition wrapper
+  transition: all 0.3s ease-in-out;
+}
+
+.quoteIcon {
+  @apply absolute z-10 pointer-events-none select-none text-jet-black;
+  opacity: 0.06;
+  top: 1.5rem;
+  left: 2rem;
+  width: 7rem;
+  height: 7rem;
+
+  @media (max-width: 768px) {
+    top: 1rem;
+    left: 1rem;
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+}
+

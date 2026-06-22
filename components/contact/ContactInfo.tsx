@@ -49,7 +49,7 @@ export const ContactInfo = () => {
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg text-granite-gray hover:text-accent-red transition-colors capitalize"
+              className="text-base text-granite-gray hover:text-accent-red transition-colors capitalize"
             >
               {platform}
             </a>

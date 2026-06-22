@@ -11,12 +11,12 @@
 }
 
 .valueNumber {
-  @apply text-accent-red font-light text-xl;
+  @apply text-accent-red font-light text-lg;
   font-family: var(--font-display);
 }
 
 .valueTitle {
-  @apply text-2xl font-light text-white-smoke tracking-wide;
+  @apply text-xl font-light text-white-smoke tracking-wide;
   font-family: var(--font-display);
 }
 

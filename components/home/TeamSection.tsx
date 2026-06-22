@@ -1,32 +1,24 @@
-/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import Image from 'next/image';
 import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
+import { teamData } from '@/lib/team-data';
 import styles from './TeamSection.module.scss';
 
-const member = {
-  name: 'Rafic',
-  role: 'Founder & Principal Designer',
-  bio: [
-    "After working across early-stage startups, growing businesses, and corporate environments for years, I began to understand how strong systems and clear communication can completely change the outcome of a project. At the same time, I also saw where the design and construction sector often falls short — gaps in coordination, unclear documentation, uncontrolled spending, compromised quality, and timelines that drift without transparency.",
-    "My approach is centered around creating spaces through a process that is organized, practical, and client-focused. I believe good design is not just about aesthetics, but about making the right decisions at the right stage — through proper planning, technical clarity, material understanding, and streamlined execution.",
-    "I strongly value empathy in the design process. Every client has different priorities, budgets, and lifestyles, and the process should adapt accordingly. The goal is to help clients spend wisely while creating spaces that feel intentional, functional, and long-lasting.",
-    "Through Full Circle Studio, I aim to build a more transparent and reliable design experience where quality, timelines, communication, and execution are given equal importance."
-  ],
-  image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800',
-};
-
 export const TeamSection = () => {
+  const member = teamData[0];
+
   return (
     <section className={styles.section} id="team">
       <Container>
         <div className={styles.header}>
           <SectionHeading>The Visionary</SectionHeading>
         </div>
-        
+
         <div className={styles.profileLayout}>
           <motion.div
             className={styles.imageCol}
@@ -38,13 +30,24 @@ export const TeamSection = () => {
             <div className={styles.imageContainer}>
               <div className={styles.borderOffset} />
               <div className={styles.imageWrapper}>
-                <img 
-                  src={member.image} 
-                  alt={member.name} 
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
                   className={styles.image}
                 />
               </div>
             </div>
+            {member.linkedin && (
+              <div className={styles.linkedinWrapper} style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className={styles.linkedinLink} style={{ color: '#d54e5e', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', display: 'inline-flex', alignItems: 'center', gap: '8px', justifyContent: 'center' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#0A66C2" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0 }}>
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                  <span style={{ borderBottom: '1px solid currentColor', lineHeight: 1, paddingBottom: '2px', display: 'inline-block' }}>Connect on LinkedIn</span>
+                </a>
+              </div>
+            )}
           </motion.div>
 
           <motion.div
@@ -60,12 +63,15 @@ export const TeamSection = () => {
             </div>
             <p className={styles.role}>{member.role}</p>
             <div className={styles.bio}>
-              {member.bio.map((paragraph, index) => (
+              {[member.bio[0], member.bio[3]].map((paragraph, index) => (
                 <p key={index} className={index > 0 ? "mt-4" : ""}>
                   {paragraph}
                 </p>
               ))}
             </div>
+            <Link href="/team" className={styles.redirectButton}>
+              Explore Our Team
+            </Link>
           </motion.div>
         </div>
       </Container>

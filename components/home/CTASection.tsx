@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Container } from '@/components/ui/Container';
 import styles from './CTASection.module.scss';
@@ -17,14 +18,14 @@ export const CTASection = () => {
           transition={{ duration: 0.7 }}
         >
           <h2 className={styles.title}>
-            Ready To Work<span className={styles.accent}>?</span>
+            Ready to shape your space<span className={styles.accent}>?</span>
           </h2>
           <p className={styles.description}>
             Let&apos;s create something extraordinary together. Reach out to discuss your next project
             and see how we can transform your space.
           </p>
           <div className={styles.ctaGroup}>
-            <a href="/contact" className={styles.ctaButton}>Book Now</a>
+            <Link href="/contact" className={styles.ctaButton}>Book Now</Link>
           </div>
         </motion.div>
       </Container>

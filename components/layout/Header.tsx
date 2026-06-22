@@ -9,7 +9,7 @@ import styles from './Header.module.scss';
 const navLinks = [
   { label: 'HOME', href: '/' },
   { label: 'ABOUT', href: '/about' },
-  { label: 'SERVICES', href: '/services' },
+  { label: 'SERVICES', href: '/#services-preview' },
   { label: 'PORTFOLIO', href: '/portfolio' },
   { label: 'FAQ', href: '/faq' },
 ];
@@ -49,7 +49,7 @@ export const Header = () => {
 
         <div className={`${styles.actions} ${!showFullMenu ? styles.isHidden : ''}`}>
           <Link href="/contact" className={styles.actionButton}>
-            GET YOUR QUOTE <span className={styles.arrow}>&gt;</span>
+            Book for free appointment <span className={styles.arrow}>&gt;</span>
           </Link>
         </div>
       </div>

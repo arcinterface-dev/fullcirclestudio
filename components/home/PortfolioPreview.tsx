@@ -15,7 +15,7 @@ export const PortfolioPreview = () => {
     <section className={styles.section} id="portfolio-preview">
       <Container>
         <div className={styles.header}>
-          <SectionHeading>Our Projects</SectionHeading>
+          <SectionHeading>Our Blog</SectionHeading>
           <Link href="/portfolio" className={styles.viewMore}>
             View All <ArrowUpRight size={16} />
           </Link>
@@ -36,6 +36,7 @@ export const PortfolioPreview = () => {
                     src={project.imageUrl}
                     alt={project.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className={styles.cardImage}
                   />
                   <div className={styles.overlay} />

@@ -8,7 +8,7 @@
   }
 
   .actionButton {
-    @apply text-[10px] tracking-[0.2em] text-white-smoke border-b border-white-smoke/30 pb-1 hover:border-white-smoke transition-all uppercase font-medium flex items-center gap-2;
+    @apply text-[10px] tracking-[0.2em] text-white-smoke border-b-2 border-accent-red pb-1 hover:border-white-smoke transition-all uppercase font-medium flex items-center gap-2;
   }
 
   .brand {

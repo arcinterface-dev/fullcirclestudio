@@ -15,7 +15,7 @@ const SplashContext = createContext<SplashContextType | undefined>(undefined);
 
 export const SplashProvider = ({ children }: { children: ReactNode }) => {
   const [splashDismissed, setSplashDismissed] = useState(false);
-  const [splashPhase, setSplashPhase] = useState<SplashPhase>('brand');
+  const [splashPhase, setSplashPhase] = useState<SplashPhase>('done');
 
   useEffect(() => {
     const skipSplash = new URLSearchParams(window.location.search).get('skipSplash');

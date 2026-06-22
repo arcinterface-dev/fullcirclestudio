@@ -4,10 +4,11 @@ export const BRAND = {
   tagline: "No corner cuts",
   whatsappNumber: "7200948055", // Placeholder
   socials: {
-    instagram: "https://instagram.com/placeholder",
+    instagram: "https://www.instagram.com/fullcirclestudio.in",
     facebook: "https://facebook.com/placeholder",
     linkedin: "https://linkedin.com/placeholder",
-  }
+  },
+  isUnderMaintenance: false, // Toggle this to true to show the maintenance page
 };
 
 export const COLORS = {

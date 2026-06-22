@@ -1,35 +1,138 @@
 .section {
-  @apply py-20 md:py-32 bg-white-smoke overflow-hidden;
+  @apply py-10 md:py-16 bg-white-smoke overflow-hidden relative;
 }
+
+.titleContainer {
+  @apply mb-8 md:mb-10;
+}
+
+.title {
+  @apply font-display text-xl md:text-2xl lg:text-3xl font-light leading-tight text-jet-black;
+}
+
+.accentText {
+  @apply text-accent-red font-normal;
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 4rem;
-  align-items: center;
+  gap: 3rem;
+  align-items: start;
+
   @media (min-width: 1024px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.75fr 1.5fr 0.75fr;
+    gap: 3rem;
   }
 }
-.textContent {
-  @apply flex flex-col items-start;
-}
-.description {
-  @apply text-granite-gray text-base md:text-lg leading-relaxed mb-6;
+
+.leftColumn {
+  @apply flex flex-col;
 }
 
-.imageContent {
-  @apply w-full h-full;
-}
 .imageWrapper {
-  @apply relative aspect-[4/5] md:aspect-square w-full overflow-hidden bg-placebo;
+  @apply relative w-full overflow-hidden;
+  aspect-ratio: 3 / 4;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+  @media (min-width: 1024px) {
+    max-height: 380px;
+  }
 }
+
 .image {
-  @apply object-cover w-full h-full;
+  @apply object-cover w-full h-full transition-transform duration-700 hover:scale-105;
 }
-.imageOverlay {
-  @apply absolute inset-0 border border-white/50 m-6 pointer-events-none z-10;
+
+.centerColumn {
+  @apply flex flex-col items-start;
+}
+
+.description {
+  @apply text-granite-gray text-sm md:text-base leading-relaxed mb-4;
+}
+
+.introSentence {
+  @apply text-jet-black font-normal text-sm md:text-base mb-4 leading-relaxed;
+}
+
+.principlesContainer {
+  @apply mb-4 w-full;
+}
+
+.principlesHeading {
+  @apply text-granite-gray text-sm md:text-base font-semibold mb-2;
+}
+
+.principlesList {
+  @apply list-disc pl-5 space-y-1.5 text-granite-gray text-sm md:text-base mb-4;
+
+  li {
+    @apply text-granite-gray font-light;
+
+    &::marker {
+      @apply text-accent-red;
+    }
+  }
+}
+
+.shortcutsText {
+  @apply text-granite-gray text-sm md:text-base leading-relaxed mb-4;
+}
+
+.noCorners {
+  @apply text-sm md:text-base font-display font-semibold tracking-wider text-accent-red mb-4;
+}
+
+.buttonWrapper {
+  @apply mt-2;
 }
 
 .redirectButton {
-  @apply mt-10 px-8 py-3 bg-jet-black text-white-smoke text-sm uppercase tracking-widest transition-all duration-300 hover:bg-machine-gun-metal hover:-translate-y-1 active:scale-95;
+  @apply inline-flex items-center gap-2 px-5 py-2.5 border border-accent-red text-accent-red text-xs uppercase tracking-widest font-semibold bg-transparent transition-all duration-300 hover:bg-accent-red hover:text-white-smoke hover:-translate-y-0.5 active:scale-95;
+  border-radius: 2px;
+}
+
+.rightColumn {
+  @apply flex flex-col items-center;
+}
+
+.founderCard {
+  @apply flex flex-col items-center w-full max-w-[280px] md:max-w-xs;
+}
+
+.founderImageWrapper {
+  @apply relative w-full overflow-hidden mb-4;
+  aspect-ratio: 4 / 5;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+  @media (min-width: 1024px) {
+    max-height: 340px;
+  }
+}
+
+.founderImage {
+  @apply object-cover w-full h-full;
+}
+
+.founderInfo {
+  @apply text-center w-full;
+}
+
+.founderName {
+  @apply font-display text-lg md:text-xl font-medium text-jet-black mb-1;
+}
+
+.founderRole {
+  @apply text-accent-red font-light text-xs md:text-sm tracking-wider uppercase mb-4;
+}
+
+.linkedinWrapper {
+  @apply flex justify-center items-center mt-2;
+}
+
+.linkedinLink {
+  @apply p-2 rounded-full transition-transform duration-300 hover:scale-110 active:scale-95;
 }

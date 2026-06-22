@@ -38,7 +38,7 @@ export const MaintenanceOverlay = () => {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              <Construction className="w-12 h-12 mb-6 mx-auto text-[var(--accent-red)]" strokeWidth={1.5} />
+              <Construction className="w-12 h-12 mb-6 mx-auto text-accent-red" strokeWidth={1.5} />
             </motion.div>
 
             <motion.h1

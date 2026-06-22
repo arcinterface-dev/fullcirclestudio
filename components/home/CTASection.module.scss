@@ -5,14 +5,14 @@
   @apply text-center max-w-2xl mx-auto space-y-6;
 }
 .title {
-  @apply text-4xl md:text-6xl font-light text-jet-black leading-tight;
+  @apply text-3xl md:text-5xl font-light text-jet-black leading-tight;
   font-family: var(--font-display);
 }
 .accent {
   @apply text-accent-red;
 }
 .description {
-  @apply text-granite-gray text-lg leading-relaxed;
+  @apply text-granite-gray text-base leading-relaxed;
 }
 .ctaGroup {
   @apply flex flex-wrap justify-center gap-4 mt-8;

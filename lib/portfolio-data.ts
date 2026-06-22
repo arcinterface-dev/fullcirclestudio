@@ -9,7 +9,8 @@ export const portfolioData: PortfolioProject[] = [
     imageUrl: "/images/portfolio/modern-minimalist.webp",
     client: "Private Client",
     year: "2023",
-    details: ["Custom Millwork", "Italian Leather Sofa", "Smart Lighting Integration"]
+    details: ["Custom Millwork", "Italian Leather Sofa", "Smart Lighting Integration"],
+    pdfUrl: "/pdfs/sample.pdf"
   },
   {
     slug: "elegant-scandinavian-apartment",

@@ -1,0 +1,80 @@
+.section {
+  @apply pt-6 pb-16 md:pt-8 md:pb-24 bg-white relative;
+}
+
+.header {
+  @apply text-center max-w-4xl mx-auto mb-16 md:mb-24;
+}
+
+.title {
+  @apply font-display text-3xl md:text-4xl lg:text-5xl font-light text-jet-black mb-8 leading-tight;
+}
+
+.introContainer {
+  @apply flex flex-col space-y-6 text-left md:text-center;
+}
+
+.introText {
+  @apply text-sm md:text-base text-granite-gray leading-relaxed font-light;
+}
+
+/* Team Group Layouts */
+.teamGroup {
+  @apply mb-16 md:mb-20 w-full;
+}
+
+.subheadingWrapper {
+  @apply flex items-center justify-center gap-3 md:gap-4 mb-10 md:mb-14;
+}
+
+.subheadingLine {
+  @apply h-[1px] bg-accent-red/20 w-8 md:w-12;
+}
+
+.subheading {
+  @apply text-xs md:text-sm font-semibold tracking-widest text-accent-red uppercase text-center font-display;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  text-align: center;
+  @apply max-w-5xl mx-auto;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+}
+
+.memberCard {
+  @apply flex flex-col items-center justify-center p-2 bg-transparent max-w-[280px] w-full mx-auto md:max-w-none;
+}
+
+.imageWrapper {
+  @apply relative w-full aspect-[4/5] rounded-lg overflow-hidden mb-4 bg-placebo;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(225, 216, 203, 0.2);
+}
+
+.image {
+  @apply object-cover transition-transform duration-700 hover:scale-105;
+}
+
+.memberName {
+  @apply font-display text-base md:text-lg font-medium text-jet-black mb-1;
+}
+
+.memberRole {
+  @apply text-xs md:text-sm text-granite-gray font-light max-w-[240px] leading-relaxed;
+}
+
+.linkedinWrapper {
+  @apply flex justify-center items-center mt-3.5;
+}
+
+.linkedinLink {
+  @apply p-1 transition-transform duration-300 hover:scale-110 active:scale-95;
+}

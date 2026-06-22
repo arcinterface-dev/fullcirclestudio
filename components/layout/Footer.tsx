@@ -34,7 +34,6 @@ export const Footer = () => {
       <Container className={styles.content}>
         <div>
           <BrandName />
-          <p className="text-granite-gray text-sm lowercase">{BRAND.tagline}</p>
         </div>
 
         <div className={styles.socials}>

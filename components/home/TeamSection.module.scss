@@ -1,47 +1,76 @@
 .section {
   @apply py-12 md:py-20 bg-albescent-white/20;
 }
+
 .header {
   @apply text-center mb-8;
 }
+
 .profileLayout {
   @apply flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-20 lg:gap-24;
 }
+
 .imageCol {
   @apply w-full md:w-[35%] lg:w-[30%] max-w-[380px];
 }
+
 .detailsCol {
   @apply w-full md:w-[65%] lg:w-[70%] flex flex-col text-left;
 }
+
 .imageContainer {
   @apply relative w-full;
 }
+
 .borderOffset {
   @apply absolute inset-0 border border-accent-red transition-all duration-500 ease-out pointer-events-none z-0;
   transform: translate(12px, 12px);
 }
+
 .imageWrapper {
   @apply aspect-square w-full overflow-hidden bg-placebo relative z-10;
 }
+
 .image {
-  @apply object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-700;
+  @apply object-cover w-full h-full transition-all duration-700;
 }
+
 .nameWrapper {
-  @apply relative self-start mb-2;
+  @apply relative self-start mb-2 pl-4;
 }
+
 .name {
-  @apply text-3xl md:text-4xl lg:text-5xl font-light text-jet-black font-display relative z-10;
+  @apply text-2xl md:text-3xl lg:text-4xl font-light text-jet-black font-display relative z-10;
 }
+
 .nameAccent {
-  @apply absolute -bottom-2 left-0 h-[3px] bg-accent-red;
-  width: 60px;
+  @apply absolute left-0 top-[10%] bottom-[10%] w-[4px] bg-accent-red;
 }
+
 .role {
-  @apply text-base md:text-lg text-granite-gray uppercase tracking-widest mt-2 font-medium;
+  @apply text-sm md:text-base text-granite-gray uppercase tracking-widest mt-2 font-medium;
 }
+
 .bio {
-  @apply mt-10 text-granite-gray text-lg md:text-xl leading-relaxed font-light;
+  @apply mt-8 text-granite-gray text-base md:text-lg leading-relaxed font-light;
+
   p {
     @apply mb-4;
   }
+}
+
+.quoteBlock {
+  @apply mt-8 pl-5 border-l-2 border-accent-red relative;
+  
+  .quoteText {
+    @apply text-base md:text-lg text-granite-gray italic font-light leading-relaxed;
+  }
+  
+  .quoteAuthor {
+    @apply mt-2 block text-xs md:text-sm text-accent-red uppercase tracking-wider font-semibold not-italic;
+  }
+}
+
+.redirectButton {
+  @apply mt-10 px-8 py-3 bg-jet-black text-white-smoke text-sm uppercase tracking-widest transition-all duration-300 hover:bg-machine-gun-metal hover:-translate-y-1 active:scale-95 self-start;
 }

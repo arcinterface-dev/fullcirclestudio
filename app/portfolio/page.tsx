@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import { PageHeader } from '@/components/ui/PageHeader';
-import { ProjectGrid } from '@/components/portfolio/ProjectGrid';
+import { DesignerGallery } from '@/components/portfolio/DesignerGallery';
 import { CTASection } from '@/components/home/CTASection';
 
 export const metadata: Metadata = {
@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   return (
     <main>
-      <PageHeader 
-        title="Selected Works" 
-        description="A showcase of our most defining projects. Each space is a unique narrative brought to life through meticulous design and craftsmanship."
+      <PageHeader
+        title="Let's explore our designer's work"
+        description="Selected works presented here reflect the design experience and creative portfolio of our designers."
       />
-      <ProjectGrid />
+      <DesignerGallery />
       <CTASection />
     </main>
   );

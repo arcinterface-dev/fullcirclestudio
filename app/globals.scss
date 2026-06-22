@@ -15,6 +15,10 @@
     --color-accent-red: #d54e5e;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-white-smoke text-jet-black antialiased;
     font-family: var(--font-inter);

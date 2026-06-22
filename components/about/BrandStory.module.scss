@@ -1,33 +1,90 @@
 .section {
-  @apply py-20 md:py-32 bg-white-smoke;
+  @apply py-16 md:py-24 relative overflow-hidden;
+  background-color: #fdfaf6;
 }
 
-.content {
-  @apply grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center;
+.headerContainer {
+  @apply mb-10 flex flex-col;
 }
 
-.textContent {
-  @apply space-y-8;
+.subtitle {
+  @apply text-accent-red font-semibold text-xs md:text-sm tracking-widest uppercase mb-2;
 }
 
-.heading {
-  @apply text-3xl md:text-5xl font-light text-jet-black leading-tight;
-  font-family: var(--font-display);
+.title {
+  @apply font-display text-3xl md:text-4xl lg:text-5xl font-light text-jet-black leading-tight;
 }
 
-.paragraph {
-  @apply text-lg text-granite-gray leading-relaxed font-light;
-}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: start;
 
-.imageWrapper {
-  @apply relative w-full aspect-[3/2] rounded-lg overflow-hidden;
-  
-  &::after {
-    content: '';
-    @apply absolute inset-0 bg-jet-black opacity-10 mix-blend-overlay pointer-events-none;
+  @media (min-width: 1024px) {
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 4rem;
   }
 }
 
+.leftColumn {
+  @apply flex flex-col w-full;
+}
+
+.imageWrapper {
+  @apply relative w-full overflow-hidden;
+  aspect-ratio: 4 / 5;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  max-height: 75vh;
+}
+
 .image {
-  @apply object-cover;
+  @apply object-cover w-full h-full;
+}
+
+.rightColumn {
+  @apply flex flex-col;
+}
+
+.bioText {
+  @apply flex flex-col space-y-6 mb-10;
+}
+
+.paragraph {
+  @apply text-sm md:text-base text-granite-gray leading-relaxed font-light;
+}
+
+/* Quote Card Styling */
+.quoteCard {
+  @apply p-8 bg-[#fdfaf6] relative overflow-hidden;
+  border: 1px solid rgba(213, 78, 94, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(213, 78, 94, 0.03);
+}
+
+.quoteCardTitle {
+  @apply text-sm md:text-base font-medium text-accent-red tracking-wide block mb-6;
+}
+
+.quoteContent {
+  @apply relative pl-8;
+}
+
+.quoteMark {
+  @apply absolute left-0 top-[-8px] text-4xl text-accent-red font-serif leading-none select-none;
+}
+
+.quoteText {
+  @apply text-sm md:text-base text-jet-black/90 leading-relaxed font-normal mb-8;
+}
+
+.signatureContainer {
+  @apply flex justify-end items-center mt-4;
+}
+
+.signature {
+  @apply text-2xl md:text-3xl text-jet-black font-medium;
+  font-family: 'Dancing Script', 'Caveat', 'Brush Script MT', cursive;
+  opacity: 0.85;
 }

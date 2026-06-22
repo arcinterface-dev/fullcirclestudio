@@ -1,0 +1,86 @@
+.section {
+  @apply py-20 md:py-32 bg-white-smoke;
+}
+
+.list {
+  @apply flex flex-col gap-24;
+}
+
+.memberRow {
+  @apply flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-20 lg:gap-24;
+  
+  // Alternating layout for subsequent members (for visual depth in lists!)
+  &:nth-child(even) {
+    @media (min-width: 768px) {
+      flex-direction: row-reverse;
+      
+      .nameWrapper {
+        @apply self-start pl-0 pr-4;
+      }
+      .nameAccent {
+        @apply left-auto right-0;
+      }
+    }
+  }
+}
+
+.imageCol {
+  @apply w-full md:w-[35%] lg:w-[30%] max-w-[380px];
+}
+
+.detailsCol {
+  @apply w-full md:w-[65%] lg:w-[70%] flex flex-col text-left;
+}
+
+.imageContainer {
+  @apply relative w-full;
+}
+
+.borderOffset {
+  @apply absolute inset-0 border border-accent-red transition-all duration-500 ease-out pointer-events-none z-0;
+  transform: translate(12px, 12px);
+}
+
+.imageWrapper {
+  @apply aspect-square w-full overflow-hidden bg-placebo relative z-10;
+}
+
+.image {
+  @apply object-cover w-full h-full transition-all duration-700;
+}
+
+.nameWrapper {
+  @apply relative self-start mb-2 pl-4;
+}
+
+.name {
+  @apply text-2xl md:text-3xl lg:text-4xl font-light text-jet-black font-display relative z-10;
+}
+
+.nameAccent {
+  @apply absolute left-0 top-[10%] bottom-[10%] w-[4px] bg-accent-red;
+}
+
+.role {
+  @apply text-sm md:text-base text-granite-gray uppercase tracking-widest mt-2 font-medium;
+}
+
+.bio {
+  @apply mt-8 text-granite-gray text-base md:text-lg leading-relaxed font-light;
+
+  p {
+    @apply mb-4;
+  }
+}
+
+.quoteBlock {
+  @apply mt-8 pl-5 border-l-2 border-accent-red relative;
+  
+  .quoteText {
+    @apply text-base md:text-lg text-granite-gray italic font-light leading-relaxed;
+  }
+  
+  .quoteAuthor {
+    @apply mt-2 block text-xs md:text-sm text-accent-red uppercase tracking-wider font-semibold not-italic;
+  }
+}

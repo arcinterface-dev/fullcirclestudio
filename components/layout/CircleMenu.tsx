@@ -2,14 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useSplash } from '@/providers/SplashProvider';
 import { usePathname } from 'next/navigation';
 import { CircleMenuOverlay } from './CircleMenuOverlay';
 import styles from './CircleMenu.module.scss';
 
 export const CircleMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { splashPhase, splashDismissed } = useSplash();
   const [mounted, setMounted] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -37,9 +35,8 @@ export const CircleMenu = () => {
   const isHomePage = pathname === '/';
   const isHeaderVisible = isHomePage && !isScrolled;
 
-  // Only show menu button if splash is done/dismissed 
   // On Mobile: Always show. On Desktop: Only show if header is hidden.
-  const showMenu = mounted && (splashDismissed || splashPhase === 'done') && (isMobile || !isHeaderVisible);
+  const showMenu = mounted && (isMobile || !isHeaderVisible);
 
   const [sbWidth, setSbWidth] = useState(0);
 
