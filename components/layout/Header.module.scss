@@ -4,11 +4,11 @@
   pointer-events: none;
 
   .navLink {
-    @apply text-[10px] tracking-[0.2em] text-white-smoke hover:text-white-smoke transition-colors uppercase font-medium;
+    @apply text-[12px] tracking-[0.2em] text-white-smoke hover:text-white-smoke transition-colors uppercase font-medium;
   }
 
   .actionButton {
-    @apply text-[10px] tracking-[0.2em] text-white-smoke border-b-2 border-accent-red pb-1 hover:border-white-smoke transition-all uppercase font-medium flex items-center gap-2;
+    @apply text-[12px] tracking-[0.2em] text-white-smoke border-b-2 border-accent-red pb-1 hover:border-white-smoke transition-all uppercase font-medium flex items-center gap-2;
   }
 
   .brand {

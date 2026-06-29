@@ -14,34 +14,41 @@ interface Step {
 const steps: Step[] = [
   {
     number: '01',
+    title: 'Consultation',
+    description:
+      'We start by understanding your vision, requirements, and space. Through an initial discussion, we gather insights into your lifestyle and aesthetic preferences to lay a strong foundation for the project.',
+    image: '/images/process/consultation.webp',
+  },
+  {
+    number: '02',
     title: 'Design',
     description:
       'We begin with deep empathy—listening beyond the brief to understand people, purpose, timeline, and budget as one complete picture, translating it into clear, intentional design grounded in what is realistically achievable.',
     image: '/images/process/design.webp',
   },
   {
-    number: '02',
+    number: '03',
     title: 'Detail',
     description:
       'We move into detailed documentation that works like a construction guide. Every dimension, material, and installation method is precisely defined so that the site team can build without confusion.',
     image: '/images/process/detail.webp',
   },
   {
-    number: '03',
+    number: '04',
     title: 'Execute',
     description:
       'We execute through our in-house factory, where trained craftsmen work with GFC drawings to ensure high-quality output. We track every stage with clear documentation for full transparency and control.',
     image: '/images/process/execute.webp',
   },
   {
-    number: '04',
+    number: '05',
     title: 'Styling',
     description:
       'We curate the final layer of personality. Through thoughtfully sourced furniture, art, and decor, we bring warmth and character, ensuring the space feels completely finished and uniquely yours.',
-    image: '/images/portfolio/luxury-penthouse.webp',
+    image: '/images/process/styling.webp',
   },
   {
-    number: '05',
+    number: '06',
     title: 'Delivery',
     description:
       'No blind promises—every schedule is built on actual scope and pace. We ensure smooth delivery with continuous tracking and a final handover support system, including aftercare guidance and product tips.',
@@ -49,7 +56,7 @@ const steps: Step[] = [
   },
 ];
 
-const NUM_STEPS = steps.length; // 5
+const NUM_STEPS = steps.length; // 6
 const LOCK_DURATION = 900; // ms cooldown between step transitions
 
 // ── Arc configuration ──────────────────────────────────────────────
@@ -57,7 +64,7 @@ const RADIUS = 500;
 const WHEEL_SIZE = RADIUS * 2; // 1000px
 
 // Where each step sits on the circle (0° = 3-o'clock / right, positive = downward)
-const STEP_ANGLES_DEG = [-60, -30, 0, 30, 60];
+const STEP_ANGLES_DEG = [-75, -45, -15, 15, 45, 75];
 
 // ── Background image layer ─────────────────────────────────────────
 function BgImage({
@@ -176,9 +183,9 @@ export const StorytellingSection = () => {
     offset: ['start start', 'end end'],
   });
 
-  // Map continuous scroll to a discrete step (0, 1, 2, 3, or 4)
+  // Map continuous scroll to a discrete step (0 to 5)
   const activeStep = useTransform(scrollYProgress, (p: number) => {
-    return Math.min(4, Math.max(0, Math.round(p * 4)));
+    return Math.min(5, Math.max(0, Math.round(p * 5)));
   });
 
   // Smoothly animate when the discrete step changes
@@ -189,9 +196,9 @@ export const StorytellingSection = () => {
     restDelta: 0.001,
   });
 
-  // Map the animated step (0-4) to wheel rotation
-  // Step 0 -> 60°, Step 1 -> 30°, Step 2 -> 0°, Step 3 -> -30°, Step 4 -> -60°
-  const wheelRotation = useTransform(smoothStep, [0, 1, 2, 3, 4], [60, 30, 0, -30, -60]);
+  // Map the animated step (0-5) to wheel rotation
+  // Step 0 -> 75°, Step 1 -> 45°, Step 2 -> 15°, Step 3 -> -15°, Step 4 -> -45°, Step 5 -> -75°
+  const wheelRotation = useTransform(smoothStep, [0, 1, 2, 3, 4, 5], [75, 45, 15, -15, -45, -75]);
 
   // ── Helper: get section geometry ────────────────────────────────────
   const getSectionInfo = useCallback(() => {
@@ -334,7 +341,7 @@ export const StorytellingSection = () => {
                   r={RADIUS - 1}
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="1"
+                  strokeWidth="3"
                 />
               </svg>
 

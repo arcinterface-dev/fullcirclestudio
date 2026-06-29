@@ -10,9 +10,9 @@ export const BrandName = ({ withShadow = false }: { withShadow?: boolean }) => {
       <Image 
         src="/images/fullcircle-logo.webp" 
         alt="Fullcircle Studio" 
-        width={300}
-        height={72}
-        className="h-12 md:h-[60px] lg:h-[72px] w-auto" 
+        width={360}
+        height={86}
+        className="h-[58px] md:h-[72px] lg:h-[86px] w-auto" 
         style={{ objectFit: 'contain' }}
         priority
       />

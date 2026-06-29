@@ -1,8 +1,8 @@
 /* ── Section: tall for scroll tracking ───────────────────────────── */
 .section {
   @apply relative;
-  height: 500vh;
-  background-color: var(--color-white-smoke);
+  height: 600vh; /* Changed to 600vh for 6 steps */
+  background-color: var(--color-albescent-white);
 }
 
 .stickyWrapper {
@@ -11,7 +11,8 @@
 
 /* ── Background images ──────────────────────────────────────────── */
 .bgContainer {
-  @apply absolute inset-0 z-0 w-full;
+  @apply absolute inset-0 z-20 w-full;
+  pointer-events: none;
   -webkit-mask-image:
     linear-gradient(to right, black calc(65vw - 500px), transparent calc(65vw - 500px)),
     radial-gradient(circle at calc(65vw - 500px) 50%, black 440px, transparent 441px);
@@ -29,13 +30,14 @@
 }
 
 .bgOverlay {
-  @apply absolute inset-0 z-10;
+  @apply absolute inset-0 z-30;
+  pointer-events: none;
   background-color: rgba(0, 0, 0, 0.05);
 }
 
 /* ── Arc viewport ───────────────────────────────────────────────── */
 .arcViewport {
-  @apply absolute inset-0 z-20;
+  @apply absolute inset-0 z-10;
 }
 
 /* Anchor point = circle center, placed at left-center of viewport */
@@ -59,8 +61,8 @@
 
 .arcSvg {
   @apply absolute inset-0;
-  color: var(--color-light-gray);
-  opacity: 0.35;
+  color: var(--color-accent-red);
+  opacity: 0.8;
 }
 
 /* ── Step node ──────────────────────────────────────────────────── */

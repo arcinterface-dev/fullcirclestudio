@@ -34,7 +34,7 @@ export const HeroSection = () => {
       <div className={styles.bgWrapper}>
         <div className={styles.bgOverlay} />
         <Image
-          src="/images/hero/hero-banner-warm.webp"
+          src="/images/hero/hero1.png"
           alt="FullCircle Studio Hero Banner"
           fill
           priority

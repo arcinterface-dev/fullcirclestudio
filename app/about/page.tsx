@@ -15,7 +15,7 @@ export default function AboutPage() {
     <main>
       <PageHeader
         title="Our Mission"
-        imageUrl="/images/portfolio/scandinavian.webp"
+        imageUrl="/images/about/our mission.jpg"
         description={`We do design with responsibility, balancing aesthetics, practicality, execution, by understanding the real needs of the people who use the space every day. For us, good design is not about unnecessary spending, visual gimmicks, or creating projects only for a showcase. It is about creating spaces that make sense emotionally, functionally, and financially.
 
 We bring design, detailing, coordination, and execution together under one circle, so every stage of the project is handled with clarity and intention. We value honest processes, thoughtful decisions, and complete commitment from concept to completion.`}

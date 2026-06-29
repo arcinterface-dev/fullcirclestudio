@@ -1,15 +1,20 @@
 .footer {
   @apply bg-white-smoke border-t border-placebo py-12;
+  // background-image: url(../../public/images/footer/footer_bg.jpeg);
 }
+
 .content {
   @apply flex flex-col md:flex-row justify-between items-center gap-8;
 }
+
 .socials {
   @apply flex gap-4;
 }
+
 .link {
   @apply text-granite-gray hover:text-accent-red transition-colors duration-300;
 }
+
 .copy {
   @apply text-granite-gray text-sm;
 }
