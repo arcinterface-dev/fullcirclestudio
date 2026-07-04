@@ -1,17 +1,27 @@
 /* ── Section: tall for scroll tracking ───────────────────────────── */
 .section {
-  @apply relative;
+  position: relative;
   height: 600vh; /* Changed to 600vh for 6 steps */
   background-color: var(--color-albescent-white);
 }
 
 .stickyWrapper {
-  @apply sticky top-0 h-screen w-full overflow-hidden;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
 }
 
 /* ── Background images ──────────────────────────────────────────── */
 .bgContainer {
-  @apply absolute inset-0 z-20 w-full;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  width: 100%;
   pointer-events: none;
   -webkit-mask-image:
     linear-gradient(to right, black calc(65vw - 500px), transparent calc(65vw - 500px)),
@@ -22,7 +32,10 @@
 }
 
 .bgImage {
-  @apply absolute inset-y-0 left-0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
   width: calc(65vw - 60px);
   background-position: center center;
   background-size: cover;
@@ -30,14 +43,24 @@
 }
 
 .bgOverlay {
-  @apply absolute inset-0 z-30;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 30;
   pointer-events: none;
   background-color: rgba(0, 0, 0, 0.05);
 }
 
 /* ── Arc viewport ───────────────────────────────────────────────── */
 .arcViewport {
-  @apply absolute inset-0 z-10;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
 }
 
 /* Anchor point = circle center, placed at left-center of viewport */
@@ -60,19 +83,27 @@
 }
 
 .arcSvg {
-  @apply absolute inset-0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   color: var(--color-accent-red);
   opacity: 0.8;
 }
 
 /* ── Step node ──────────────────────────────────────────────────── */
 .stepNode {
-  @apply absolute;
+  position: absolute;
   will-change: transform, opacity;
 }
 
 .dotContainer {
-  @apply absolute flex items-center justify-center shrink-0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
   width: 80px;
   height: 80px;
   top: 0;
@@ -89,7 +120,7 @@
 }
 
 .textBlockWrapper {
-  @apply absolute;
+  position: absolute;
   top: 0;
   left: 60px;
   /* Base offset on desktop */
@@ -109,7 +140,7 @@
 }
 
 .stepTextBlock {
-  @apply relative;
+  position: relative;
   width: 440px;
   transform-origin: left center;
 
@@ -127,31 +158,50 @@
 }
 
 .partLabel {
-  @apply text-base font-medium tracking-[0.15em] uppercase block;
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
   color: var(--color-granite-gray);
   margin-bottom: 8px;
 }
 
 .stepTitle {
-  @apply text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight;
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 600;
+  letter-spacing: -0.025em; /* tracking-tight */
   color: var(--color-jet-black);
   font-family: var(--font-display);
+
+  @media (min-width: 768px) {
+    font-size: 2.25rem; /* text-4xl */
+  }
+  @media (min-width: 1024px) {
+    font-size: 3rem; /* text-5xl */
+  }
 }
 
 .stepAccent {
-  @apply text-accent-red;
+  color: var(--color-accent-red);
 }
 
 .stepDescription {
-  @apply text-base md:text-lg leading-relaxed font-light;
+  font-size: 1rem; /* text-base */
+  line-height: 1.625;
+  font-weight: 300;
   color: var(--color-granite-gray);
   margin-top: 12px;
   max-width: 100%;
+
+  @media (min-width: 768px) {
+    font-size: 1.125rem; /* text-lg */
+  }
 }
 
 /* ── Decorative dot (opposite side of arc) ──────────────────────── */
 .decorativeDot {
-  @apply absolute;
+  position: absolute;
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -159,7 +209,6 @@
   transform: translate(-50%, -50%);
   opacity: 0.4;
 }
-
 
 /* ── Mobile ─────────────────────────────────────────────────────── */
 @media (max-width: 767px) {
@@ -178,22 +227,22 @@
   }
 
   .bgOverlay {
-    @apply bg-gradient-to-b from-transparent to-black/20;
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.2));
     background-color: transparent;
+  }
+
+  .arcViewport {
+    z-index: 40;
   }
 
   .arcPositioner {
     left: -50%;
+    transform: scale(0.55);
+    transform-origin: center center;
   }
 
   .arcWheel {
-    /* Use CSS individual `scale` property so it doesn't conflict
-       with Framer Motion's `rotate` set via the style prop */
-    scale: 0.55;
-  }
-
-  .stepNode {
-    /* Counteract the 0.55 scale on mobile? Wait, the scale is on arcWheel. */
+    /* remove scale from arcWheel since we scaled arcPositioner */
   }
 
   .dotContainer {
@@ -248,11 +297,12 @@
   }
 
   .stickyWrapper {
-    @apply relative h-auto;
+    position: relative;
+    height: auto;
   }
 
   .arcViewport {
-    @apply relative;
+    position: relative;
     height: auto;
   }
 
@@ -269,9 +319,10 @@
   }
 
   .stepNode {
-    @apply relative;
+    position: relative;
     transform: none !important;
     opacity: 1 !important;
-    @apply py-8;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 }
